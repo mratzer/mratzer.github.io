@@ -1,0 +1,7 @@
+h1 {
+    font-family: monospace;
+    text-align: center;
+    font-size: 5em;
+    margin-top: 20vh;
+    hyphens: auto;
+}
