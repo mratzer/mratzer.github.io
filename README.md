@@ -1,1 +1,1 @@
-hi :)
+Repository for my static homepage.
