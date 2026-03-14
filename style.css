@@ -1,7 +1,60 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+		background-image: linear-gradient(to right, #090909  0%, #000 25%, #000 50%, #090909 75%);
+		color: white;
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	body {
+		background-image: linear-gradient(to right, #f9f9f9  0%, #fff 25%, #fff 50%, #f9f9f9 75%);
+		color: black;
+	}
+}
+
+body {
+	font-family: sans-serif;
+	padding: 2em;
+	background-size: 7em 100%;
+	background-position: center;
+}
+
 h1 {
-    font-family: monospace;
-    text-align: center;
-    font-size: 5em;
-    margin-top: 20vh;
-    hyphens: auto;
+	text-align: center;
+	margin: 0 0 1em 0;
+	font-weight: normal;
+	font-size: 3em;
+}
+
+div.photos {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 2em;
+}
+
+details.photo > summary {
+	list-style: none;
+	line-height: 0;
+}
+
+details.photo > summary > img {
+	border: 0.2em solid white;
+	box-shadow: 0.5em 0.5em 1em black;
+	width: 100%;
+	height: auto;
+}
+
+details.photo > p {
+	font-family: monospace;
+	font-size: 1.5em;
+}
+
+details.photo > p:first-of-type {
+	margin-top: 1em;
 }
