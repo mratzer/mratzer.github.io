@@ -24,37 +24,44 @@ body {
 	background-position: center;
 }
 
-h1 {
+header > h1 {
 	text-align: center;
 	margin: 0 0 1em 0;
 	font-weight: normal;
 	font-size: 3em;
 }
 
-div.photos {
+main {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	gap: 2em;
 }
 
-details.photo > summary {
+details > summary {
 	list-style: none;
 	line-height: 0;
 }
 
-details.photo > summary > img {
+details > summary > img {
 	border: 0.2em solid white;
 	box-shadow: 0.5em 0.5em 1em black;
 	width: 100%;
 	height: auto;
 }
 
-details.photo > p {
+details > p {
 	font-family: monospace;
 	font-size: 1.5em;
 }
 
-details.photo > p:first-of-type {
+details > p:first-of-type {
 	margin-top: 1em;
+}
+
+@media print {
+	details > summary > img {
+		border: none;
+		box-shadow: none;
+	}
 }
