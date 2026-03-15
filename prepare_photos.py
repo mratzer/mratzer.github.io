@@ -13,6 +13,7 @@ PHOTO_PREFIX='DSCF'
 PHOTO_SUFFIX='.jpg'
 ARTIST='marrat.eu'
 WORKING_DIR=os.path.abspath(os.fsencode('./'))
+DEPLOYMENT_DIR=os.path.join(WORKING_DIR, os.fsencode('_site'))
 ASSET_DIR=os.path.join(WORKING_DIR, os.fsencode('_site/assets'))
 YAML_FILE=os.path.join(WORKING_DIR, os.fsencode('photos.yaml'))
 TIMEZONE=zoneinfo.ZoneInfo("Europe/Vienna")
@@ -127,7 +128,7 @@ def write_to_yaml(photo_data_list, target):
         filtered_exif_data = { k: v for k, v in exif_data.items() if v and k not in SENSITIVE_EXIF_ATTRIBUTES }
 
         yaml_data['photos'].append({
-            'file_path': os.fsdecode(os.path.relpath(photo_data.output_file, WORKING_DIR)),
+            'file_path': os.fsdecode(os.path.relpath(photo_data.output_file, DEPLOYMENT_DIR)),
             'alt': photo_data.alt,
             'exif_data': filtered_exif_data
         })

@@ -1,5 +1,5 @@
 photos:
-- file_path: _site/assets/007.jpg
+- file_path: assets/007.jpg
   alt: Moss blossom
   exif_data:
     artist: marrat.eu
@@ -15,7 +15,7 @@ photos:
     lense_model: XF18-55mmF2.8-4 R LM OIS
     lense_info: 18-55mm f/2.8-4
     year_month: 2026-03
-- file_path: _site/assets/006.jpg
+- file_path: assets/006.jpg
   alt: Great tit eating from a feeder
   exif_data:
     artist: marrat.eu
@@ -31,7 +31,7 @@ photos:
     lense_model: XF70-300mmF4-5.6 R LM OIS WR
     lense_info: 70-300mm f/4-5.6
     year_month: 2026-02
-- file_path: _site/assets/005.jpg
+- file_path: assets/005.jpg
   alt: Great tit on a branch
   exif_data:
     artist: marrat.eu
@@ -47,7 +47,7 @@ photos:
     lense_model: XF150-600mmF5.6-8 R LM OIS WR
     lense_info: 150-600mm f/5.6-8
     year_month: 2026-02
-- file_path: _site/assets/004.jpg
+- file_path: assets/004.jpg
   alt: Snowdrops
   exif_data:
     artist: marrat.eu
@@ -63,7 +63,7 @@ photos:
     lense_model: XF70-300mmF4-5.6 R LM OIS WR
     lense_info: 70-300mm f/4-5.6
     year_month: 2026-02
-- file_path: _site/assets/003.jpg
+- file_path: assets/003.jpg
   alt: Wristwatch from Meistersinger
   exif_data:
     artist: marrat.eu
@@ -75,7 +75,7 @@ photos:
     camera_make: FUJIFILM
     camera_model: X-T5
     year_month: 2026-02
-- file_path: _site/assets/002.jpg
+- file_path: assets/002.jpg
   alt: Pink and white tulip
   exif_data:
     artist: marrat.eu
@@ -87,7 +87,7 @@ photos:
     camera_make: FUJIFILM
     camera_model: X-T5
     year_month: 2026-01
-- file_path: _site/assets/001.jpg
+- file_path: assets/001.jpg
   alt: Head of a swan
   exif_data:
     artist: marrat.eu
