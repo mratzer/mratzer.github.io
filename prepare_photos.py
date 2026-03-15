@@ -49,7 +49,7 @@ class ExifData:
         result = subprocess.run(command, stdout=subprocess.PIPE)
         values = list(map(self._normalize, result.stdout.decode('utf-8').split('\n')))
 
-        self.aperture = 'f/' + values[0] if values[0] else None
+        self.aperture = 'f/' + values[0] if values[0] else 'f/?'
         self.exposure = values[1] + 's'
         self.iso = int(values[2])
         self.focallength = values[3]
@@ -175,4 +175,3 @@ if __name__=="__main__":
 # TODOs
 # - Read photos.yaml to not override ALT and to determine COUNTER automatically
 # - Add possibility to hide fotos
-# - Add commands (prepare photos, prepare site) here (?) - ability to share data structures

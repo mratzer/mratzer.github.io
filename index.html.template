@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>marrat.eu &#x2022; Photo Portfolio</title>
+
+		<meta name="language" content="en">
+		<meta name="referrer" content="no-referrer">
+
+		<link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
+		<link rel="stylesheet" href="/style.css">
+	</head>
+
+	<body>
+		<header>
+			<h1>marrat.eu &#x2022; Photo Portfolio </h1>
+		</header>
+
+		<main>
+$photos
+		</main>
+	</body>
+</html>

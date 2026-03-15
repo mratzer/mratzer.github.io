@@ -1,0 +1,5 @@
+			<details>
+				<summary><img src="$file_path" alt="$alt"></summary>
+				<p>$exif_data.aperture | $exif_data.exposure | ISO $exif_data.iso | $exif_data.focallength</p>
+				<p>$exif_data.camera_make $exif_data.camera_model + $exif_data.lense_make $exif_data.lense_info$additional_gear</p>
+			</details>

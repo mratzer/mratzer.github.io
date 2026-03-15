@@ -1,6 +1,9 @@
 photos:
 - file_path: assets/007.jpg
   alt: Moss blossom
+  additional_gear:
+  - macro ring
+  - magnifying lense
   exif_data:
     artist: marrat.eu
     copyright: marrat.eu
@@ -68,24 +71,30 @@ photos:
   exif_data:
     artist: marrat.eu
     copyright: marrat.eu
+    aperture: f/?
     exposure: 1/500s
     iso: 400
     focallength: 21.0 mm
     colorspace: sRGB
     camera_make: FUJIFILM
     camera_model: X-T5
+    lense_make: TTARTISTAN
+    lense_info: 35mm f/0.95
     year_month: 2026-02
 - file_path: assets/002.jpg
   alt: Pink and white tulip
   exif_data:
     artist: marrat.eu
     copyright: marrat.eu
+    aperture: f/?
     exposure: 1/30s
     iso: 320
     focallength: 21.0 mm
     colorspace: sRGB
     camera_make: FUJIFILM
     camera_model: X-T5
+    lense_make: TTARTISTAN
+    lense_info: 35mm f/0.95
     year_month: 2026-01
 - file_path: assets/001.jpg
   alt: Head of a swan
