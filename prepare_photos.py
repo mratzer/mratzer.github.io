@@ -108,6 +108,8 @@ def read_photos(directory_name, counter):
                 output_file_name,
                 ExifData(input_file)))
 
+    photo_data_list.sort(key = lambda pd: pd.exif_data.timestamp, reverse = True)
+
     return photo_data_list
 
 
