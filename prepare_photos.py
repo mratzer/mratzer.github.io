@@ -57,9 +57,9 @@ class ExifData:
         self.colorspace = values[4]
         self.camera_make = values[5]
         self.camera_model = values[6]
-        self.lense_make = values[7]
-        self.lense_model = values[8]
-        self.lense_info = values[9]
+        self.lens_make = values[7]
+        self.lens_model = values[8]
+        self.lens_info = values[9]
         self.timestamp = datetime.datetime.strptime(values[10] + values[11], "%Y:%m:%d %H:%M:%S%z")
         self.year_month = self.timestamp.astimezone(TIMEZONE).strftime("%Y-%m")
 
