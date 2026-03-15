@@ -4,6 +4,7 @@ import datetime
 import os
 import re
 import subprocess
+import shutil
 import sys
 import yaml
 import zoneinfo
@@ -134,7 +135,9 @@ def write_to_yaml(photo_data_list, target):
         })
 
     # print(yaml_data)
-    
+
+    shutil.copyfile(target, os.fsdecode(target) + ".bak")
+
     with open(target, 'w') as yaml_file:
         yaml.dump(yaml_data, yaml_file, default_flow_style=False, sort_keys=False)
 
