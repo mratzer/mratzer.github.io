@@ -173,8 +173,3 @@ def main():
 
 if __name__=="__main__":
     main()
-
-
-# TODOs
-# - Read photos.yaml to not override ALT and to determine COUNTER automatically
-# - Add possibility to hide fotos
