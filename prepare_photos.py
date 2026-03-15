@@ -13,7 +13,7 @@ PHOTO_PREFIX='DSCF'
 PHOTO_SUFFIX='.jpg'
 ARTIST='marrat.eu'
 WORKING_DIR=os.path.abspath(os.fsencode('./'))
-ASSET_DIR=os.path.join(WORKING_DIR, os.fsencode('assets'))
+ASSET_DIR=os.path.join(WORKING_DIR, os.fsencode('_site/assets'))
 YAML_FILE=os.path.join(WORKING_DIR, os.fsencode('photos.yaml'))
 TIMEZONE=zoneinfo.ZoneInfo("Europe/Vienna")
 SENSITIVE_EXIF_ATTRIBUTES=['timestamp']
@@ -169,3 +169,9 @@ def main():
 
 if __name__=="__main__":
     main()
+
+
+# TODOs
+# - Read photos.yaml to not override ALT and to determine COUNTER automatically
+# - Add possibility to hide fotos
+# - Add commands (prepare photos, prepare site) here (?) - ability to share data structures
