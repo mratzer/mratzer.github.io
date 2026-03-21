@@ -1,4 +1,20 @@
 photos:
+- file_path: assets/008.jpg
+  alt: Airplane
+  exif_data:
+    artist: marrat.eu
+    copyright: marrat.eu
+    aperture: f/11.0
+    exposure: 1/2000s
+    iso: 2500
+    focallength: 600.0 mm
+    colorspace: sRGB
+    camera_make: FUJIFILM
+    camera_model: X-T5
+    lens_make: FUJIFILM
+    lens_model: XF150-600mmF5.6-8 R LM OIS WR
+    lens_info: 150-600mm f/5.6-8
+    year_month: 2026-03
 - file_path: assets/007.jpg
   alt: Moss blossom
   additional_gear:
@@ -67,7 +83,7 @@ photos:
     lens_info: 70-300mm f/4-5.6
     year_month: 2026-02
 - file_path: assets/003.jpg
-  alt: Wristwatch from Meistersinger
+  alt: Wristwatch from MeisterSinger
   exif_data:
     artist: marrat.eu
     copyright: marrat.eu
