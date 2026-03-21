@@ -3,14 +3,14 @@
 	padding: 0;
 }
 
-@media (prefers-color-scheme: dark) {
+@media screen and (prefers-color-scheme: dark) {
 	body {
 		background-image: linear-gradient(to right, #090909  0%, #000 25%, #000 50%, #090909 75%);
 		color: white;
 	}
 }
 
-@media (prefers-color-scheme: light) {
+@media screen and (prefers-color-scheme: light) {
 	body {
 		background-image: linear-gradient(to right, #f9f9f9  0%, #fff 25%, #fff 50%, #f9f9f9 75%);
 		color: black;
@@ -45,7 +45,7 @@ details > summary {
 
 details > summary > img {
 	border: 0.2em solid white;
-	box-shadow: 0.5em 0.5em 1em black;
+	box-shadow: 0.5em 0.5em 1em #333;
 	width: 100%;
 	height: auto;
 }
@@ -60,9 +60,17 @@ details > p:first-of-type {
 	margin-top: 1em;
 }
 
+.scheme-toggler {
+	cursor: pointer;
+}
+
 @media print {
 	details > summary > img {
 		border: none;
 		box-shadow: none;
+	}
+
+	.scheme-toggler {
+		display: none;
 	}
 }

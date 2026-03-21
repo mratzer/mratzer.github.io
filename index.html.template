@@ -10,11 +10,12 @@
 
 		<link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
 		<link rel="stylesheet" href="/style.css">
+		<script async src="/functions.js"></script>
 	</head>
 
 	<body>
 		<header>
-			<h1>marrat.eu &#x2022; Photo Portfolio </h1>
+			<h1>marrat.eu &#x2022; Photo Portfolio</h1>
 		</header>
 
 		<main>
