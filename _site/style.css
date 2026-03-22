@@ -31,7 +31,8 @@ header {
 }
 
 header > p.scheme-toggler {
-	font-size: 2em;
+	font-size: 3em;
+	line-height: 0.5em;
 	margin-left: auto;
 	cursor: pointer;
 }
