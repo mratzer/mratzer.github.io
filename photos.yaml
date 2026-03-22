@@ -106,7 +106,7 @@ photos:
     aperture: f/?
     exposure: 1/500s
     iso: 400
-    focallength: 21.0 mm
+    focallength: '? mm'
     colorspace: sRGB
     camera_make: FUJIFILM
     camera_model: X-T5
@@ -121,11 +121,11 @@ photos:
     aperture: f/?
     exposure: 1/30s
     iso: 320
-    focallength: 21.0 mm
+    focallength: '? mm'
     colorspace: sRGB
     camera_make: FUJIFILM
     camera_model: X-T5
-    lens_make: TTARTISTAN
+    lens_make: 7ARTISTANS
     lens_info: 35mm f/0.95
     year_month: 2026-01
 - file_path: assets/001.jpg

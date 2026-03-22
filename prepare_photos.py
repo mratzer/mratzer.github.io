@@ -53,7 +53,7 @@ class ExifData:
         self.aperture = 'f/' + values[0] if values[0] else 'f/?'
         self.exposure = values[1] + 's'
         self.iso = int(values[2])
-        self.focallength = values[3]
+        self.focallength =  values[3] if self.aperture != 'f/?' else '? mm'
         self.colorspace = values[4]
         self.camera_make = values[5]
         self.camera_model = values[6]
@@ -117,7 +117,7 @@ def read_photos(directory_name, counter):
 
 def prepare_photo(photo_data):
     os.system(f"jpegtran -copy all -progressive -perfect -optimize {photo_data.input_file_name} > {photo_data.output_file_name}")
-    os.system(f"exiftool -overwrite_original -all= -tagsFromFile @ -artist={ARTIST} -copyright={ARTIST} -make -model -lensinfo -lensmake -lensmodel -orientation -exposuretime -fnumber -iso -focallength -colorspace {photo_data.output_file_name}")
+    os.system(f"exiftool -q -overwrite_original -all= -tagsFromFile @ -artist={ARTIST} -copyright={ARTIST} -make -model -lensinfo -lensmake -lensmodel -orientation -exposuretime -fnumber -iso -focallength -colorspace {photo_data.output_file_name}")
 
 def write_to_yaml(photo_data_list, target):
     yaml_data = {
