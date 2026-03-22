@@ -24,11 +24,25 @@ body {
 	background-position: center;
 }
 
+header {
+	display: flex;
+	align-items: center;
+	margin-bottom: 3em;
+}
+
+header > p.scheme-toggler {
+	font-size: 2em;
+	margin-left: auto;
+	cursor: pointer;
+}
+
 header > h1 {
 	text-align: center;
-	margin: 0 0 1em 0;
 	font-weight: normal;
 	font-size: 3em;
+	position: relative;
+	left: 50%;
+	transform: translate(-50%);
 }
 
 main {
@@ -60,17 +74,13 @@ details > p:first-of-type {
 	margin-top: 1em;
 }
 
-.scheme-toggler {
-	cursor: pointer;
-}
-
 @media print {
 	details > summary > img {
 		border: none;
 		box-shadow: none;
 	}
 
-	.scheme-toggler {
+	header > p.scheme-toggler {
 		display: none;
 	}
 }
