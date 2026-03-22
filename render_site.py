@@ -43,7 +43,10 @@ def render_photo_template(template, dictionary, prefix=''):
         print(actual_key)
 
         if isinstance(value, list):
-            rendered = rendered.replace(f"${actual_key}", " + " + " + ".join(value))
+            if actual_key == 'additional_gear' and value:
+                rendered = rendered.replace(f"${actual_key}", "<br>" + " + ".join(value))
+            else:
+                rendered = rendered.replace(f"${actual_key}", " + " + " + ".join(value))
         elif isinstance(value, dict):
             rendered = render_photo_template(rendered, value, actual_key)
         elif isinstance(value, int):

@@ -54,15 +54,16 @@ main {
 }
 
 details > summary {
-	list-style: none;
+	list-style-type: none;
 	line-height: 0;
 }
 
 details > summary > img {
 	border: 0.2em solid white;
 	box-shadow: 0.5em 0.5em 1em #333;
-	width: 100%;
-	height: auto;
+	max-height: 90vh;
+	max-width: 100%;
+	width: auto;
 }
 
 details > p {
