@@ -1,5 +1,18 @@
 #!/bin/bash
 
+INPUT_DIRECTORY="$1"
+
+if [ -z "$INPUT_DIRECTORY" ]; then
+  echo "Usage: $0 <directory_path>"
+  exit 1
+fi
+
+if [ ! -d "$INPUT_DIRECTORY" ]; then
+  echo "Error: '$INPUT_DIRECTORY' is not a valid directory"
+  exit 1
+fi
+
+
 ARTIST=marrat.eu
 
 TILE_WIDTH=400
@@ -8,7 +21,6 @@ TILE_HEIGHT=630
 CURRENT_WIDTH=0
 CURRENT_OFFSET=0
 
-INPUT_DIRECTORY="$1"
 RESULT_FILE=_site/assets/preview.jpg
 
 rm -f $RESULT_FILE
