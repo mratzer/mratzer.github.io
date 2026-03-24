@@ -25,6 +25,5 @@ Repository for my static homepage.
 
 # TODOs
 
-3. Remove deleted photos from repository.
 4. Galleries (?)
 
