@@ -5,8 +5,9 @@ import yaml
 
 WORKING_DIR=os.path.abspath(os.fsencode('./'))
 YAML_FILE=os.path.join(WORKING_DIR, os.fsencode('photos.yaml'))
-INDEX_TEMPLATE_FILE=os.path.join(WORKING_DIR, os.fsencode('index.html.template'))
-PHOTO_TEMPLATE_FILE=os.path.join(WORKING_DIR, os.fsencode('photo.html.template'))
+TEMPLATE_DIR=os.path.join(WORKING_DIR, os.fsencode('templates/'))
+INDEX_TEMPLATE_FILE=os.path.join(TEMPLATE_DIR, os.fsencode('index.html.template'))
+PHOTO_TEMPLATE_FILE=os.path.join(TEMPLATE_DIR, os.fsencode('photo.html.template'))
 INDEX_FILE=os.path.join(WORKING_DIR, os.fsencode('_site/index.html'))
 
 
