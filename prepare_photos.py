@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import datetime
+import hashlib
 import os
 import re
 import subprocess
@@ -86,7 +87,7 @@ class PhotoData:
         self.exif_data = exif_data
         self.additional_gear = []
 
-def read_photos(directory_name, counter):
+def prepare_photos(directory_name):
     directory = os.path.abspath(os.fsencode(directory_name))
 
     new_photo_data_list = []
@@ -96,21 +97,10 @@ def read_photos(directory_name, counter):
         input_file_name = os.fsdecode(input_file)
 
         if input_file_name.startswith(PHOTO_PREFIX) and input_file_name.endswith(PHOTO_SUFFIX):
-            counter = counter + 1
-
             input_file = os.path.join(directory, input_file)
-            input_file_name = os.fsdecode(input_file)
-            output_file = os.path.join(os.fsencode(ASSET_DIR), os.fsencode(f"{counter:>03}{PHOTO_SUFFIX}"))
-            output_file_name = os.fsdecode(output_file)
 
-            new_photo_data = PhotoData(
-                input_file,
-                input_file_name,
-                output_file,
-                output_file_name,
-                ExifData(input_file))
-
-            old_photo_data = get_old_photo_data(old_photo_data_list, output_file)
+            new_photo_data = prepare_photo(input_file)
+            old_photo_data = get_old_photo_data(old_photo_data_list, new_photo_data.output_file)
 
             if old_photo_data:
                 new_photo_data.alt = old_photo_data['alt']
@@ -128,22 +118,45 @@ def read_photos(directory_name, counter):
     return new_photo_data_list
 
 
-def get_old_photo_data(old_photo_data_list, output_file):    
+def get_old_photo_data(old_photo_data_list, output_file):
     wanted_file_path = get_relative_path(output_file)
-    
+
     for photo_data in old_photo_data_list['photos']:
         if photo_data['file_path'] == wanted_file_path:
             return photo_data
 
     return None
 
-def prepare_photo(photo_data):
-    os.system(f"jpegtran -copy all -progressive -perfect -optimize {photo_data.input_file_name} > {photo_data.output_file_name}")
-    os.system(f"exiftool -q -overwrite_original -all= -tagsFromFile @ -artist={ARTIST} -copyright={ARTIST} -make -model -lensinfo -lensmake -lensmodel -orientation -exposuretime -fnumber -iso -focallength -colorspace {photo_data.output_file_name}")
+def prepare_photo(input_file):
+    input_file_name = os.fsdecode(input_file)
 
+    tmp_file_name = 'tmp'
+    tmp_file_path = os.fsdecode(os.path.join(WORKING_DIR, os.fsencode(f"{tmp_file_name}{PHOTO_SUFFIX}")))
+
+    os.system(f"jpegtran -copy all -progressive -perfect -optimize {input_file_name} > {tmp_file_path}")
+    os.system(f"exiftool -q -overwrite_original -all= -tagsFromFile @ -artist={ARTIST} -copyright={ARTIST} -make -model -lensinfo -lensmake -lensmodel -orientation -exposuretime -fnumber -iso -focallength -colorspace {tmp_file_path}")
+
+    output_file = os.path.join(os.fsencode(ASSET_DIR), os.fsencode(f"{sha1sum(tmp_file_path)}{PHOTO_SUFFIX}"))
+    output_file_name = os.fsdecode(output_file)
+
+    os.system(f"mv {tmp_file_path} {output_file_name}")
+
+    new_photo_data = PhotoData(
+        input_file,
+        input_file_name,
+        output_file,
+        output_file_name,
+        ExifData(input_file))
+
+    return new_photo_data
 
 def get_relative_path(file):
     return os.fsdecode(os.path.relpath(file, DEPLOYMENT_DIR))
+
+def sha1sum(file_path):
+    # Our photos are small enough to read them as a whole
+    with open(file_path, 'rb') as file:
+        return hashlib.sha1(file.read()).hexdigest()
 
 def write_to_yaml(photo_data_list, target):
     yaml_data = {
@@ -186,19 +199,11 @@ def main():
         print('Please pass a directory as 1st parameter')
         sys.exit()
 
-    try:
-        counter=int(sys.argv[2])
-    except:
-        print('No counter set, continuing with 0')
-        counter = 0
-
-    photo_data_list = read_photos(directory_name, counter)
+    photo_data_list = prepare_photos(directory_name)
 
     for photo_data in photo_data_list:
         if not photo_data.alt:
             photo_data.alt = input(f"Enter ALT text for {photo_data.input_file}: ")
-
-        prepare_photo(photo_data)
 
     write_to_yaml(photo_data_list, YAML_FILE)
 

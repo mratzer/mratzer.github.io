@@ -25,8 +25,6 @@ Repository for my static homepage.
 
 # TODOs
 
-1. Read metadata file if present and derive counter from there. Also, avoid having to handle manual information every time.
-2. Add new photos between existing ones.
-3. Remove photos.
+3. Remove deleted photos from repository.
 4. Galleries (?)
 
