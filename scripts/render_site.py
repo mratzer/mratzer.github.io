@@ -12,13 +12,13 @@ INDEX_FILE=os.path.join(WORKING_DIR, os.fsencode('_site/index.html'))
 
 
 def read_from_yaml(source):
-    with open(source, 'r') as yaml_file:
-        yaml_data = yaml.safe_load(yaml_file)
+    try:
+        with open(source, 'r') as yaml_file:
+            yaml_data = yaml.safe_load(yaml_file)
 
-        return yaml_data['photos']
-
-    return []
-
+            return yaml_data['photos']
+    except:
+        return []
 
 def read_file(source):
     with open(source, 'r') as file:

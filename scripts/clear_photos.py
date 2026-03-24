@@ -44,12 +44,13 @@ def to_absolute_path(directory, filename):
     return os.fsdecode(os.path.join(directory, os.fsencode(filename)))
 
 def read_from_yaml(source):
-    with open(source, 'r') as yaml_file:
-        yaml_data = yaml.safe_load(yaml_file)
+    try:
+        with open(source, 'r') as yaml_file:
+            yaml_data = yaml.safe_load(yaml_file)
 
-        return yaml_data['photos']
-
-    return []
+            return yaml_data['photos']
+    except:
+        return []
 
 
 def main():

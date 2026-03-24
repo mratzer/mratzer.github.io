@@ -106,9 +106,9 @@ def prepare_photos(directory_name):
                 new_photo_data.alt = old_photo_data['alt']
                 new_photo_data.additional_gear = old_photo_data.get('additional_gear', [])
 
-                if not new_photo_data.exif_data.lens_make and old_photo_data['exif_data']['lens_make']:
+                if not new_photo_data.exif_data.lens_make and old_photo_data['exif_data'].get('lens_make', None):
                     new_photo_data.exif_data.lens_make = old_photo_data['exif_data']['lens_make']
-                if not new_photo_data.exif_data.lens_info and old_photo_data['exif_data']['lens_info']:
+                if not new_photo_data.exif_data.lens_info and old_photo_data['exif_data'].get('lens_info', None):
                     new_photo_data.exif_data.lens_info = old_photo_data['exif_data']['lens_info']
 
             new_photo_data_list.append(new_photo_data)
@@ -176,18 +176,20 @@ def write_to_yaml(photo_data_list, target):
 
 #   print(yaml_data)
 
-    shutil.copyfile(target, os.fsdecode(target) + ".bak")
+    if (os.path.isfile(target)):
+        shutil.copyfile(target, os.fsdecode(target) + ".bak")
 
     with open(target, 'w') as yaml_file:
         yaml.dump(yaml_data, yaml_file, default_flow_style=False, sort_keys=False)
 
 def read_from_yaml(source):
-    with open(source, 'r') as yaml_file:
-        yaml_data = yaml.safe_load(yaml_file)
+    try:
+        with open(source, 'r') as yaml_file:
+            yaml_data = yaml.safe_load(yaml_file)
 
-        return yaml_data['photos']
-
-    return []
+            return yaml_data['photos']
+    except:
+        return []
 
 
 
