@@ -16,7 +16,7 @@ PHOTO_SUFFIX='.jpg'
 ARTIST='marrat.eu'
 WORKING_DIR=os.path.abspath(os.fsencode('./'))
 DEPLOYMENT_DIR=os.path.join(WORKING_DIR, os.fsencode('_site'))
-ASSET_DIR=os.path.join(WORKING_DIR, os.fsencode('_site/assets'))
+ASSET_DIR=os.path.join(DEPLOYMENT_DIR, os.fsencode('assets'))
 YAML_FILE=os.path.join(WORKING_DIR, os.fsencode('photos.yaml'))
 TIMEZONE=zoneinfo.ZoneInfo("Europe/Vienna")
 SENSITIVE_EXIF_ATTRIBUTES=['timestamp']
@@ -121,7 +121,7 @@ def prepare_photos(directory_name):
 def get_old_photo_data(old_photo_data_list, output_file):
     wanted_file_path = get_relative_path(output_file)
 
-    for photo_data in old_photo_data_list['photos']:
+    for photo_data in old_photo_data_list:
         if photo_data['file_path'] == wanted_file_path:
             return photo_data
 
@@ -183,8 +183,11 @@ def write_to_yaml(photo_data_list, target):
 
 def read_from_yaml(source):
     with open(source, 'r') as yaml_file:
-        return yaml.safe_load(yaml_file)
+        yaml_data = yaml.safe_load(yaml_file)
 
+        return yaml_data['photos']
+
+    return []
 
 
 
