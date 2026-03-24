@@ -86,11 +86,11 @@ class PhotoData:
         self.exif_data = exif_data
         self.additional_gear = []
 
-
 def read_photos(directory_name, counter):
     directory = os.path.abspath(os.fsencode(directory_name))
 
-    photo_data_list = []
+    new_photo_data_list = []
+    old_photo_data_list = read_from_yaml(YAML_FILE)
 
     for input_file in os.listdir(directory):
         input_file_name = os.fsdecode(input_file)
@@ -103,21 +103,47 @@ def read_photos(directory_name, counter):
             output_file = os.path.join(os.fsencode(ASSET_DIR), os.fsencode(f"{counter:>03}{PHOTO_SUFFIX}"))
             output_file_name = os.fsdecode(output_file)
 
-            photo_data_list.append(PhotoData(
+            new_photo_data = PhotoData(
                 input_file,
                 input_file_name,
                 output_file,
                 output_file_name,
-                ExifData(input_file)))
+                ExifData(input_file))
 
-    photo_data_list.sort(key = lambda pd: pd.exif_data.timestamp, reverse = True)
+            old_photo_data = get_old_photo_data(old_photo_data_list, output_file)
 
-    return photo_data_list
+            if old_photo_data:
+                new_photo_data.alt = old_photo_data['alt']
+                new_photo_data.additional_gear = old_photo_data.get('additional_gear', [])
 
+                if not new_photo_data.exif_data.lens_make and old_photo_data['exif_data']['lens_make']:
+                    new_photo_data.exif_data.lens_make = old_photo_data['exif_data']['lens_make']
+                if not new_photo_data.exif_data.lens_info and old_photo_data['exif_data']['lens_info']:
+                    new_photo_data.exif_data.lens_info = old_photo_data['exif_data']['lens_info']
+
+            new_photo_data_list.append(new_photo_data)
+
+    new_photo_data_list.sort(key = lambda pd: pd.exif_data.timestamp, reverse = True)
+
+    return new_photo_data_list
+
+
+def get_old_photo_data(old_photo_data_list, output_file):    
+    wanted_file_path = get_relative_path(output_file)
+    
+    for photo_data in old_photo_data_list['photos']:
+        if photo_data['file_path'] == wanted_file_path:
+            return photo_data
+
+    return None
 
 def prepare_photo(photo_data):
     os.system(f"jpegtran -copy all -progressive -perfect -optimize {photo_data.input_file_name} > {photo_data.output_file_name}")
     os.system(f"exiftool -q -overwrite_original -all= -tagsFromFile @ -artist={ARTIST} -copyright={ARTIST} -make -model -lensinfo -lensmake -lensmodel -orientation -exposuretime -fnumber -iso -focallength -colorspace {photo_data.output_file_name}")
+
+
+def get_relative_path(file):
+    return os.fsdecode(os.path.relpath(file, DEPLOYMENT_DIR))
 
 def write_to_yaml(photo_data_list, target):
     yaml_data = {
@@ -129,17 +155,24 @@ def write_to_yaml(photo_data_list, target):
         filtered_exif_data = { k: v for k, v in exif_data.items() if v and k not in SENSITIVE_EXIF_ATTRIBUTES }
 
         yaml_data['photos'].append({
-            'file_path': os.fsdecode(os.path.relpath(photo_data.output_file, DEPLOYMENT_DIR)),
+            'file_path': get_relative_path(photo_data.output_file),
             'alt': photo_data.alt,
+            'additional_gear': photo_data.additional_gear,
             'exif_data': filtered_exif_data
         })
 
-    # print(yaml_data)
+#   print(yaml_data)
 
     shutil.copyfile(target, os.fsdecode(target) + ".bak")
 
     with open(target, 'w') as yaml_file:
         yaml.dump(yaml_data, yaml_file, default_flow_style=False, sort_keys=False)
+
+def read_from_yaml(source):
+    with open(source, 'r') as yaml_file:
+        return yaml.safe_load(yaml_file)
+
+
 
 
 def main():

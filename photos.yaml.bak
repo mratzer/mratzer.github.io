@@ -1,4 +1,20 @@
 photos:
+- file_path: assets/009.jpg
+  alt: Two European goldfinches
+  exif_data:
+    artist: marrat.eu
+    copyright: marrat.eu
+    aperture: f/8.0
+    exposure: 1/2000s
+    iso: 3200
+    focallength: 600.0 mm
+    colorspace: sRGB
+    camera_make: FUJIFILM
+    camera_model: X-T5
+    lens_make: FUJIFILM
+    lens_model: XF150-600mmF5.6-8 R LM OIS WR
+    lens_info: 150-600mm f/5.6-8
+    year_month: 2026-03
 - file_path: assets/008.jpg
   alt: Airplane
   exif_data:
@@ -90,7 +106,7 @@ photos:
     aperture: f/?
     exposure: 1/500s
     iso: 400
-    focallength: 21.0 mm
+    focallength: '? mm'
     colorspace: sRGB
     camera_make: FUJIFILM
     camera_model: X-T5
@@ -105,11 +121,11 @@ photos:
     aperture: f/?
     exposure: 1/30s
     iso: 320
-    focallength: 21.0 mm
+    focallength: '? mm'
     colorspace: sRGB
     camera_make: FUJIFILM
     camera_model: X-T5
-    lens_make: TTARTISTAN
+    lens_make: 7ARTISTANS
     lens_info: 35mm f/0.95
     year_month: 2026-01
 - file_path: assets/001.jpg

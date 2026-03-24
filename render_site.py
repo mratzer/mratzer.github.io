@@ -35,15 +35,18 @@ def render_photo_template(template, dictionary, prefix=''):
     rendered = template
 
     for key, value in dictionary.items():
+        if not value:
+            continue
+
         if prefix:
             actual_key = f"{prefix}.{key}"
         else:
             actual_key = key
 
-        print(actual_key)
+#       print(actual_key)
 
         if isinstance(value, list):
-            if actual_key == 'additional_gear' and value:
+            if actual_key == 'additional_gear':
                 rendered = rendered.replace(f"${actual_key}", "<br>" + " + ".join(value))
             else:
                 rendered = rendered.replace(f"${actual_key}", " + " + " + ".join(value))
@@ -71,8 +74,8 @@ def main():
 
     index = index_template.replace("$photos", "".join(rendered_photos))
 
-    print(index)
-    
+#   print(index)
+
     write_file(INDEX_FILE, index)
 
 
