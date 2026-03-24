@@ -79,11 +79,11 @@ class ExifData:
             return stripped
 
 class PhotoData:
-    def __init__(self, input_file, input_file_name, output_file, output_file_name, exif_data):
+    def __init__(self, input_file, input_filename, output_file, output_filename, exif_data):
         self.input_file = input_file
-        self.input_file_name = input_file_name
+        self.input_filename = input_filename
         self.output_file = output_file
-        self.output_file_name = output_file_name
+        self.output_filename = output_filename
         self.alt = None
         self.exif_data = exif_data
         self.additional_gear = []
@@ -96,9 +96,9 @@ def prepare_photos(directory_name):
     old_photo_data_list = utils.read_from_yaml(YAML_FILE)
 
     for input_file in os.listdir(directory):
-        input_file_name = os.fsdecode(input_file)
+        input_filename = os.fsdecode(input_file)
 
-        if input_file_name.startswith(PHOTO_PREFIX) and input_file_name.endswith(PHOTO_SUFFIX):
+        if input_filename.startswith(PHOTO_PREFIX) and input_filename.endswith(PHOTO_SUFFIX):
             input_file = os.path.join(directory, input_file)
 
             new_photo_data = prepare_photo(input_file)
@@ -131,28 +131,27 @@ def get_old_photo_data(old_photo_data_list, output_file):
 
 
 def prepare_photo(input_file):
-    input_file_name = os.fsdecode(input_file)
+    input_filename = os.fsdecode(input_file)
 
-    tmp_file_name = 'tmp'
-    tmp_file_path = utils.to_absolute_path(WORKING_DIR, f"{tmp_file_name}{PHOTO_SUFFIX}")
+    tmp_file_path = utils.to_absolute_path(WORKING_DIR, f"tmp{PHOTO_SUFFIX}")
 
-    print(f"\tPreparing photo {input_file_name}")
+    print(f"\tPreparing photo {input_filename}")
 
-    os.system(f"jpegtran -copy all -progressive -perfect -optimize {input_file_name} > {tmp_file_path}")
+    os.system(f"jpegtran -copy all -progressive -perfect -optimize {input_filename} > {tmp_file_path}")
     os.system(f"exiftool -q -q -overwrite_original -all= -tagsFromFile @ -artist={ARTIST} -copyright={ARTIST} -make -model -lensinfo -lensmake -lensmodel -orientation -exposuretime -fnumber -iso -focallength -colorspace {tmp_file_path}")
 
     output_file = utils.to_absolute_file(ASSET_DIR, f"{sha1sum(tmp_file_path)}{PHOTO_SUFFIX}")
-    output_file_name = os.fsdecode(output_file)
+    output_filename = os.fsdecode(output_file)
 
-    os.system(f"mv {tmp_file_path} {output_file_name}")
+    os.system(f"mv {tmp_file_path} {output_filename}")
 
-    print(f"\tPrepared photo {input_file_name} -> {utils.to_relative_path(WORKING_DIR, output_file)}")
+    print(f"\tPrepared photo {input_filename} -> {utils.to_relative_path(WORKING_DIR, output_file)}")
 
     new_photo_data = PhotoData(
         input_file,
-        input_file_name,
+        input_filename,
         output_file,
-        output_file_name,
+        output_filename,
         ExifData(input_file))
 
     return new_photo_data

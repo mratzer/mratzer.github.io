@@ -15,9 +15,9 @@ def clear_photos(directory, used_file_paths):
     all_file_paths = []
 
     for file in os.listdir(directory):
-        file_name = os.fsdecode(file)
+        filename = os.fsdecode(file)
 
-        if file_name.endswith(PHOTO_SUFFIX):
+        if filename.endswith(PHOTO_SUFFIX):
             all_file_paths.append(utils.to_absolute_path(directory, file))
 
 #   print(used_file_paths)

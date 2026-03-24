@@ -23,11 +23,11 @@ def write_file(target, content):
         file.write(content)
         file.close()
 
-def to_absolute_file(directory, file_name):
-    return os.path.join(directory, os.fsencode(file_name))
+def to_absolute_file(directory, filename):
+    return os.path.join(directory, os.fsencode(filename))
 
-def to_absolute_path(directory, file_name):
-    return os.fsdecode(to_absolute_file(directory, file_name))
+def to_absolute_path(directory, filename):
+    return os.fsdecode(to_absolute_file(directory, filename))
 
-def to_relative_path(directory, file_path):
-    return os.fsdecode(os.path.relpath(file_path, directory))
+def to_relative_path(directory, file):
+    return os.fsdecode(os.path.relpath(file, directory))
