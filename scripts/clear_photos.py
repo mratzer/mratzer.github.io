@@ -29,7 +29,7 @@ def clear_photos(directory, used_file_paths):
         used_file_paths.append(utils.to_absolute_path(ASSET_DIR, photo_to_preserve))
     
     for file_to_delete in (x for x in all_file_paths if x not in used_file_paths):
-        print('delete ' + file_to_delete)
+        print(f"\tRemove {utils.to_relative_path(WORKING_DIR, os.fsencode(file_to_delete))}")
         os.remove(file_to_delete)
         count+=1
 
