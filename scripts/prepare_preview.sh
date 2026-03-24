@@ -23,6 +23,8 @@ CURRENT_OFFSET=0
 
 RESULT_FILE=_site/assets/preview.jpg
 
+echo "Preparing preview image ..."
+
 rm -f $RESULT_FILE
 
 for INPUT in $INPUT_DIRECTORY/DSCF*.jpg; do
@@ -41,3 +43,5 @@ done
 
 jpegtran -perfect -copy none -progressive -optimize -outfile $RESULT_FILE $RESULT_FILE
 exiftool -q -overwrite_original -all= -tagsFromFile @ -artist=$ARTIST -copyright=$ARTIST $RESULT_FILE
+
+echo "Prepared preview image"

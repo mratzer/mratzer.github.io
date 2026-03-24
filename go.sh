@@ -20,12 +20,11 @@ if [ -n "$PREVIEW_DIRECTORY" ] && [ ! -d "$PREVIEW_DIRECTORY" ]; then
   exit 1
 fi
 
-./scripts/prepare_photos.py $PHOTOS_DIRECTORY
 
-if [ -n "$PREVIEW_DIRECTORY" ]; then
+./scripts/prepare_photos.py $PHOTOS_DIRECTORY \
+&& if [ -n "$PREVIEW_DIRECTORY" ]; then
   ./scripts/prepare_preview.sh $PREVIEW_DIRECTORY
-fi
-
-./scripts/render_site.py
-./scripts/clear_photos.py
-./scripts/run_locally.sh
+fi \
+&& ./scripts/render_site.py \
+&& ./scripts/clear_photos.py \
+&& ./scripts/run_locally.sh
