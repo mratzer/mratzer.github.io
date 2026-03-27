@@ -62,7 +62,7 @@ details > summary > img {
 	border: 0.2em solid white;
 	box-shadow: 0.5em 0.5em 1em #333;
 	max-height: 90vh;
-	max-width: 100%;
+	max-width: 90vh;
 	width: auto;
 }
 
