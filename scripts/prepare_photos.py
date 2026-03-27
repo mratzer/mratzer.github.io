@@ -145,14 +145,14 @@ def prepare_photo(input_file):
 
     os.system(f"mv {tmp_file_path} {output_filename}")
 
-    print(f"\tPrepared photo {input_filename} -> {utils.to_relative_path(WORKING_DIR, output_file)}")
-
     new_photo_data = PhotoData(
         input_file,
         input_filename,
         output_file,
         output_filename,
         ExifData(input_file))
+
+    print(f"\tPrepared photo {input_filename} -> {utils.to_relative_path(WORKING_DIR, output_file)}")
 
     return new_photo_data
 
