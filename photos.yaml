@@ -16,7 +16,7 @@ photos:
     lens_model: XF150-600mmF5.6-8 R LM OIS WR
     lens_info: 150-600mm f/5.6-8
     year_month: 2026-03
-- file_path: assets/f8f2a30f4b2a53be3647d49c947678be965c4532.jpg
+- file_path: assets/f9daef2bbce321933e5f3b72176cf9d0a33129e1.jpg
   alt: Airplane
   additional_gear: []
   exif_data:
@@ -152,3 +152,20 @@ photos:
     lens_model: 18-300mm F/3.5-6.3 DiIII-A VC VXD B061X
     lens_info: 18-300mm f/3.5-6.3
     year_month: 2026-01
+- file_path: assets/efdca306fce60930ef5d2ebe8f97a77cbf12f38a.jpg
+  alt: Purple Dome Aster
+  additional_gear: []
+  exif_data:
+    artist: marrat.eu
+    copyright: marrat.eu
+    aperture: f/6.3
+    exposure: 1/320s
+    iso: 400
+    focallength: 289.3 mm
+    colorspace: sRGB
+    camera_make: FUJIFILM
+    camera_model: X-T5
+    lens_make: TAMRON
+    lens_model: 18-300mm F/3.5-6.3 DiIII-A VC VXD B061X
+    lens_info: 18-300mm f/3.5-6.3
+    year_month: 2025-11
