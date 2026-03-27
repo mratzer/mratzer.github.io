@@ -53,27 +53,18 @@ main {
 	gap: 2em;
 }
 
-details > summary {
-	list-style-type: none;
-	line-height: 0;
-}
-
-details > summary > img {
+figure > img {
 	border: 0.2em solid white;
 	box-shadow: 0.5em 0.5em 1em #333;
-	max-height: 90vh;
-	max-width: 90vh;
-	width: auto;
+	max-width: 90vw;
+	height: auto;
+	margin-bottom: 1em;
 }
 
-details > p {
+figure > figcaption > p {
 	font-family: monospace;
 	font-size: 1.5em;
 	margin-left: 1em;
-}
-
-details > p:first-of-type {
-	margin-top: 1em;
 }
 
 @media print {
