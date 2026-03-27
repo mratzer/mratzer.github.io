@@ -46,6 +46,8 @@ class ExifData:
             '-lensinfo',
             '-datetimeoriginal',
             '-offsettimeoriginal',
+            '-imagewidth',
+            '-imageheight',
             os.path.abspath(input_file)
         ]
 
@@ -64,6 +66,8 @@ class ExifData:
         self.lens_info = values[9]
         self.timestamp = datetime.datetime.strptime(values[10] + values[11], "%Y:%m:%d %H:%M:%S%z")
         self.year_month = self.timestamp.astimezone(TIMEZONE).strftime("%Y-%m")
+        self.width = int(values[12])
+        self.height = int(values[13])
 
 
     def _normalize(self, value):

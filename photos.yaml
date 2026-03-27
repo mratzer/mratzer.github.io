@@ -16,6 +16,8 @@ photos:
     lens_model: XF150-600mmF5.6-8 R LM OIS WR
     lens_info: 150-600mm f/5.6-8
     year_month: 2026-03
+    width: 1000
+    height: 1000
 - file_path: assets/f9daef2bbce321933e5f3b72176cf9d0a33129e1.jpg
   alt: Airplane
   additional_gear: []
@@ -33,6 +35,8 @@ photos:
     lens_model: XF150-600mmF5.6-8 R LM OIS WR
     lens_info: 150-600mm f/5.6-8
     year_month: 2026-03
+    width: 1000
+    height: 1000
 - file_path: assets/3ef17e6f31a711ea029e494ac82ad3d01baee88a.jpg
   alt: Moss blossom
   additional_gear:
@@ -52,6 +56,8 @@ photos:
     lens_model: XF18-55mmF2.8-4 R LM OIS
     lens_info: 18-55mm f/2.8-4
     year_month: 2026-03
+    width: 1000
+    height: 1000
 - file_path: assets/127e4ab51688eeb54b3bd846d1a34cd65a347e50.jpg
   alt: Great tit eating from a feeder
   additional_gear: []
@@ -69,6 +75,8 @@ photos:
     lens_model: XF70-300mmF4-5.6 R LM OIS WR
     lens_info: 70-300mm f/4-5.6
     year_month: 2026-02
+    width: 1000
+    height: 1000
 - file_path: assets/26043d98b2ce0592799691b86d7910f7459b7784.jpg
   alt: Great tit on a branch
   additional_gear: []
@@ -86,6 +94,8 @@ photos:
     lens_model: XF150-600mmF5.6-8 R LM OIS WR
     lens_info: 150-600mm f/5.6-8
     year_month: 2026-02
+    width: 1000
+    height: 1000
 - file_path: assets/85ab2571c9acb8b148eb819b17bb53636414fc25.jpg
   alt: Snowdrops
   additional_gear: []
@@ -103,6 +113,8 @@ photos:
     lens_model: XF70-300mmF4-5.6 R LM OIS WR
     lens_info: 70-300mm f/4-5.6
     year_month: 2026-02
+    width: 1000
+    height: 1000
 - file_path: assets/94d3686861d2350209cd632925ca1356f643096f.jpg
   alt: Wristwatch from MeisterSinger
   additional_gear: []
@@ -119,6 +131,8 @@ photos:
     lens_make: 7ARTISTANS
     lens_info: 35mm f/0.95
     year_month: 2026-02
+    width: 1000
+    height: 1000
 - file_path: assets/d06ed4178c69902594cbbd0e428b82cbe8b99300.jpg
   alt: Pink and white tulip
   additional_gear: []
@@ -135,6 +149,8 @@ photos:
     lens_make: 7ARTISTANS
     lens_info: 35mm f/0.95
     year_month: 2026-01
+    width: 1000
+    height: 1000
 - file_path: assets/689ea356c70412f4e3c179330555100564c305e8.jpg
   alt: Head of a swan
   additional_gear: []
@@ -152,6 +168,8 @@ photos:
     lens_model: 18-300mm F/3.5-6.3 DiIII-A VC VXD B061X
     lens_info: 18-300mm f/3.5-6.3
     year_month: 2026-01
+    width: 1000
+    height: 1000
 - file_path: assets/efdca306fce60930ef5d2ebe8f97a77cbf12f38a.jpg
   alt: Purple Dome Aster
   additional_gear: []
@@ -169,3 +187,5 @@ photos:
     lens_model: 18-300mm F/3.5-6.3 DiIII-A VC VXD B061X
     lens_info: 18-300mm f/3.5-6.3
     year_month: 2025-11
+    width: 1000
+    height: 1000

@@ -1,5 +1,5 @@
 			<figure>
-				<img src="$file_path" alt="$alt">
+				<img src="$file_path" alt="$alt" width="$exif_data.width" height="$exif_data.height">
 				<figcaption>
 					<p>$exif_data.aperture | $exif_data.exposure | ISO $exif_data.iso | $exif_data.focallength</p>
 					<p>$exif_data.camera_make $exif_data.camera_model + $exif_data.lens_make $exif_data.lens_info$additional_gear</p>
