@@ -1,4 +1,99 @@
 photos:
+- file_path: assets/b6e3140e2becb7e1208262afaed41bb08dee656a.jpg
+  alt: Pigeon on a branch
+  additional_gear: []
+  exif_data:
+    artist: marrat.eu
+    copyright: marrat.eu
+    aperture: f/8.0
+    exposure: 1/1000s
+    iso: 1600
+    focallength: 600.0 mm
+    colorspace: sRGB
+    camera_make: FUJIFILM
+    camera_model: X-T5
+    lens_make: FUJIFILM
+    lens_model: XF150-600mmF5.6-8 R LM OIS WR
+    lens_info: 150-600mm f/5.6-8
+    year_month: 2026-04
+    width: 1000
+    height: 1000
+- file_path: assets/96aa6fd73de598101916b2de6496d98175791c1e.jpg
+  alt: Moss on a branch
+  additional_gear: []
+  exif_data:
+    artist: marrat.eu
+    copyright: marrat.eu
+    aperture: f/8.0
+    exposure: 1/250s
+    iso: 1000
+    focallength: 300.0 mm
+    colorspace: sRGB
+    camera_make: FUJIFILM
+    camera_model: X-T5
+    lens_make: TAMRON
+    lens_model: 18-300mm F/3.5-6.3 DiIII-A VC VXD B061X
+    lens_info: 18-300mm f/3.5-6.3
+    year_month: 2026-04
+    width: 999
+    height: 1000
+- file_path: assets/4b2203d6e780d972554f0a2fd6922d48dfe7cb55.jpg
+  alt: Male duck
+  additional_gear: []
+  exif_data:
+    artist: marrat.eu
+    copyright: marrat.eu
+    aperture: f/6.3
+    exposure: 1/1000s
+    iso: 2000
+    focallength: 55.8 mm
+    colorspace: sRGB
+    camera_make: FUJIFILM
+    camera_model: X-T5
+    lens_make: TAMRON
+    lens_model: 18-300mm F/3.5-6.3 DiIII-A VC VXD B061X
+    lens_info: 18-300mm f/3.5-6.3
+    year_month: 2026-04
+    width: 1000
+    height: 1000
+- file_path: assets/7ff6f43774d6ef630c23840df9d0c7efa4bd5540.jpg
+  alt: Chaffinch
+  additional_gear: []
+  exif_data:
+    artist: marrat.eu
+    copyright: marrat.eu
+    aperture: f/9.0
+    exposure: 1/1000s
+    iso: 1000
+    focallength: 218.1 mm
+    colorspace: sRGB
+    camera_make: FUJIFILM
+    camera_model: X-T5
+    lens_make: TAMRON
+    lens_model: 18-300mm F/3.5-6.3 DiIII-A VC VXD B061X
+    lens_info: 18-300mm f/3.5-6.3
+    year_month: 2026-04
+    width: 1000
+    height: 1000
+- file_path: assets/2b8a6bb27f5272fa10578ffc64df852fb1526a1c.jpg
+  alt: Bumblebee
+  additional_gear: []
+  exif_data:
+    artist: marrat.eu
+    copyright: marrat.eu
+    aperture: f/8.0
+    exposure: 1/2000s
+    iso: 800
+    focallength: 300.0 mm
+    colorspace: sRGB
+    camera_make: FUJIFILM
+    camera_model: X-T5
+    lens_make: TAMRON
+    lens_model: 18-300mm F/3.5-6.3 DiIII-A VC VXD B061X
+    lens_info: 18-300mm f/3.5-6.3
+    year_month: 2026-04
+    width: 1000
+    height: 1000
 - file_path: assets/c8b41f17c4930aab3e8bcb3454ccf3a82465015c.jpg
   alt: Two European goldfinches
   additional_gear: []
