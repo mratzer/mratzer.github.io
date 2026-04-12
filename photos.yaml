@@ -1,4 +1,23 @@
 photos:
+- file_path: assets/27581ad9d50bf4e8b6f91696d1be1b0f69719ee7.jpg
+  alt: Close up of a bee
+  additional_gear: []
+  exif_data:
+    artist: marrat.eu
+    copyright: marrat.eu
+    aperture: f/14.0
+    exposure: 1/250s
+    iso: 400
+    focallength: 80.0 mm
+    colorspace: sRGB
+    camera_make: FUJIFILM
+    camera_model: X-T5
+    lens_make: FUJIFILM
+    lens_model: XF80mmF2.8 R LM OIS WR Macro
+    lens_info: 80mm f/2.8
+    year_month: 2026-04
+    width: 1000
+    height: 1000
 - file_path: assets/b6e3140e2becb7e1208262afaed41bb08dee656a.jpg
   alt: Pigeon on a branch
   additional_gear: []
