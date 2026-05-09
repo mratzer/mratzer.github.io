@@ -2,6 +2,7 @@ photos:
 - file_path: assets/27581ad9d50bf4e8b6f91696d1be1b0f69719ee7.jpg
   alt: Close up of a bee
   additional_gear: []
+  albums: []
   exif_data:
     artist: marrat.eu
     copyright: marrat.eu
@@ -21,6 +22,7 @@ photos:
 - file_path: assets/b6e3140e2becb7e1208262afaed41bb08dee656a.jpg
   alt: Pigeon on a branch
   additional_gear: []
+  albums: []
   exif_data:
     artist: marrat.eu
     copyright: marrat.eu
@@ -40,6 +42,7 @@ photos:
 - file_path: assets/96aa6fd73de598101916b2de6496d98175791c1e.jpg
   alt: Moss on a branch
   additional_gear: []
+  albums: []
   exif_data:
     artist: marrat.eu
     copyright: marrat.eu
@@ -59,6 +62,7 @@ photos:
 - file_path: assets/4b2203d6e780d972554f0a2fd6922d48dfe7cb55.jpg
   alt: Male duck
   additional_gear: []
+  albums: []
   exif_data:
     artist: marrat.eu
     copyright: marrat.eu
@@ -78,6 +82,7 @@ photos:
 - file_path: assets/7ff6f43774d6ef630c23840df9d0c7efa4bd5540.jpg
   alt: Chaffinch
   additional_gear: []
+  albums: []
   exif_data:
     artist: marrat.eu
     copyright: marrat.eu
@@ -97,6 +102,7 @@ photos:
 - file_path: assets/2b8a6bb27f5272fa10578ffc64df852fb1526a1c.jpg
   alt: Bumblebee
   additional_gear: []
+  albums: []
   exif_data:
     artist: marrat.eu
     copyright: marrat.eu
@@ -116,6 +122,7 @@ photos:
 - file_path: assets/c8b41f17c4930aab3e8bcb3454ccf3a82465015c.jpg
   alt: Two European goldfinches
   additional_gear: []
+  albums: []
   exif_data:
     artist: marrat.eu
     copyright: marrat.eu
@@ -135,6 +142,7 @@ photos:
 - file_path: assets/f9daef2bbce321933e5f3b72176cf9d0a33129e1.jpg
   alt: Airplane
   additional_gear: []
+  albums: []
   exif_data:
     artist: marrat.eu
     copyright: marrat.eu
@@ -156,6 +164,7 @@ photos:
   additional_gear:
   - macro ring
   - magnifying lens
+  albums: []
   exif_data:
     artist: marrat.eu
     copyright: marrat.eu
@@ -175,6 +184,7 @@ photos:
 - file_path: assets/127e4ab51688eeb54b3bd846d1a34cd65a347e50.jpg
   alt: Great tit eating from a feeder
   additional_gear: []
+  albums: []
   exif_data:
     artist: marrat.eu
     copyright: marrat.eu
@@ -194,6 +204,7 @@ photos:
 - file_path: assets/26043d98b2ce0592799691b86d7910f7459b7784.jpg
   alt: Great tit on a branch
   additional_gear: []
+  albums: []
   exif_data:
     artist: marrat.eu
     copyright: marrat.eu
@@ -213,6 +224,7 @@ photos:
 - file_path: assets/85ab2571c9acb8b148eb819b17bb53636414fc25.jpg
   alt: Snowdrops
   additional_gear: []
+  albums: []
   exif_data:
     artist: marrat.eu
     copyright: marrat.eu
@@ -232,6 +244,7 @@ photos:
 - file_path: assets/94d3686861d2350209cd632925ca1356f643096f.jpg
   alt: Wristwatch from MeisterSinger
   additional_gear: []
+  albums: []
   exif_data:
     artist: marrat.eu
     copyright: marrat.eu
@@ -250,6 +263,7 @@ photos:
 - file_path: assets/d06ed4178c69902594cbbd0e428b82cbe8b99300.jpg
   alt: Pink and white tulip
   additional_gear: []
+  albums: []
   exif_data:
     artist: marrat.eu
     copyright: marrat.eu
@@ -268,6 +282,7 @@ photos:
 - file_path: assets/689ea356c70412f4e3c179330555100564c305e8.jpg
   alt: Head of a swan
   additional_gear: []
+  albums: []
   exif_data:
     artist: marrat.eu
     copyright: marrat.eu
@@ -287,6 +302,7 @@ photos:
 - file_path: assets/efdca306fce60930ef5d2ebe8f97a77cbf12f38a.jpg
   alt: Purple Dome Aster
   additional_gear: []
+  albums: []
   exif_data:
     artist: marrat.eu
     copyright: marrat.eu

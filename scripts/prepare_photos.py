@@ -91,6 +91,7 @@ class PhotoData:
         self.alt = None
         self.exif_data = exif_data
         self.additional_gear = []
+        self.albums = []
 
 
 def prepare_photos(directory_name):
@@ -180,6 +181,7 @@ def write_to_yaml(photo_data_list, target):
             'file_path': utils.to_relative_path(DEPLOYMENT_DIR, photo_data.output_file),
             'alt': photo_data.alt,
             'additional_gear': photo_data.additional_gear,
+            'albums': photo_data.albums,
             'exif_data': filtered_exif_data
         })
 
