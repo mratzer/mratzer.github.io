@@ -8,6 +8,10 @@
 		background-image: linear-gradient(to right, #090909  0%, #000 25%, #000 50%, #090909 75%);
 		color: white;
 	}
+
+	header {
+		background-color: #090909;
+	}
 }
 
 @media screen and (prefers-color-scheme: light) {
@@ -15,65 +19,134 @@
 		background-image: linear-gradient(to right, #f9f9f9  0%, #fff 25%, #fff 50%, #f9f9f9 75%);
 		color: black;
 	}
+
+	header {
+		background-color: #f9f9f9;
+	}
+}
+
+@media screen and (orientation: portrait) {
+	figure img {
+		max-width: min(90vw, 1000px);
+		max-height: min(90vw, 1000px, 90vh);
+	}
+
+	main {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media screen and (orientation: landscape) {
+	figure img {
+		max-width: min(30vw, 1000px);
+		max-height: min(30vw, 1000px, 90vh);
+	}
+
+	main {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
 }
 
 body {
 	font-family: sans-serif;
-	padding: 2em;
 	background-size: 7em 100%;
 	background-position: center;
+	margin-bottom: 2em;
+	padding: 1em;
 }
 
 header {
-	display: flex;
+	display: grid;
+	grid-template-columns: 1em 1fr 1em;
 	align-items: center;
-	margin-bottom: 3em;
+	box-shadow: 0.5em 0.5em 1em #333;
+
+	margin: 0 auto 3em auto;
+	max-width: min(90vw, 1000px);
+	border: 0.5em solid white;
+	transition: transform 0.5s ease;
+}
+
+header.sticky {
+	position: sticky;
+	top: 1em;
+	z-index: 1000;
+}
+
+header.hidden {
+	transform: translateY(-200%);
+}
+
+header > p {
+	font-size: 3em;
+	line-height: 0.5em;
+	margin: 0.2em 0.5em;
+}
+
+header > p.play {
+	cursor: pointer;
+	justify-self: start;
 }
 
 header > p.scheme-toggler {
-	font-size: 3em;
-	line-height: 0.5em;
-	margin-left: auto;
 	cursor: pointer;
+	justify-self: end;
 }
 
 header > h1 {
 	text-align: center;
 	font-weight: normal;
 	font-size: 3em;
-	position: relative;
-	left: 50%;
-	transform: translate(-50%);
+	justify-self: center;
+	margin: 0.2em;
 }
 
 main {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 2em;
+	display: grid;
+	align-items: end;
+	justify-items: center;
+	gap: 0;
 }
 
-figure > img {
+figure {
+	justify-self: center;
+	text-align: center;
+}
+
+figure img {
 	border: 0.5em solid white;
 	box-shadow: 0.5em 0.5em 1em #333;
-	max-width: min(90vw, 1000px);
+	width: auto;
 	height: auto;
-	margin-bottom: 1em;
+}
+
+figure > figcaption {
+	margin-top: 1em;
+	height: 6em;
+	overflow: auto;
 }
 
 figure > figcaption > p {
 	font-family: monospace;
 	font-size: 1.5em;
 	margin-left: 1em;
+	text-align: left;
 }
 
 @media print {
-	details > summary > img {
+	figure img {
 		border: none;
 		box-shadow: none;
 	}
 
-	header > p.scheme-toggler {
+	header {
+		background-color: white;
+		border: none;
+		box-shadow: none;
+		grid-template-columns: 1fr;
+	}
+
+	header > p {
 		display: none;
 	}
 }

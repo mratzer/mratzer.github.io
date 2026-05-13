@@ -1,6 +1,8 @@
 let marrat = (function () {
 	"use strict";
 
+	let lastScroll = 0;
+
 	function toggleScheme() {
 		for (let styleSheet = 0; styleSheet < document.styleSheets.length; styleSheet++) {
 			for (let sheetRule = 0; sheetRule < document.styleSheets[styleSheet].cssRules.length; sheetRule++) {
@@ -36,8 +38,27 @@ let marrat = (function () {
 		return schemeToggler;
 	}
 
+	function addHeaderToggler(header) {
+		header.classList.add('sticky');
+
+		window.addEventListener('scroll', () => {
+			const currentScroll = window.scrollY;
+
+			if (currentScroll > lastScroll && currentScroll > 100) {
+				header.classList.add('hidden');
+			} else {
+				header.classList.remove('hidden');
+			}
+
+			lastScroll = currentScroll;
+		}, {
+			passive: true
+		});
+	}
+
 	return {
-		createSchemeToggler: createSchemeToggler
+		createSchemeToggler: createSchemeToggler,
+		addHeaderToggler: addHeaderToggler
 	};
 
 }());
@@ -45,9 +66,15 @@ let marrat = (function () {
 window.onload = function (ev) {
 	"use strict";
 
-	let schemeToggler = marrat.createSchemeToggler();
+	const header = document.getElementsByTagName('header')[0];
 
-	if (schemeToggler) {
-		document.getElementsByTagName('header')[0].appendChild(schemeToggler);
+	if (header) {
+		const schemeToggler = marrat.createSchemeToggler();
+
+		if (schemeToggler) {
+			header.appendChild(schemeToggler);
+		}
+
+		marrat.addHeaderToggler(header);
 	}
 };
