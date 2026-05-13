@@ -112,6 +112,7 @@ def prepare_photos(directory_name):
             if old_photo_data:
                 new_photo_data.alt = old_photo_data['alt']
                 new_photo_data.additional_gear = old_photo_data.get('additional_gear', [])
+                new_photo_data.albums = old_photo_data.get('albums', [])
 
                 if not new_photo_data.exif_data.lens_make and old_photo_data['exif_data'].get('lens_make', None):
                     new_photo_data.exif_data.lens_make = old_photo_data['exif_data']['lens_make']
