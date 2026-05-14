@@ -19,7 +19,7 @@
 
 	<body>
 		<header>
-			<p></p>
+			<p>$header.left.content</p>
 			<h1>marrat.eu &ndash; Photo Portfolio</h1>
 		</header>
 

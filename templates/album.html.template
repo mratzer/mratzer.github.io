@@ -1,0 +1,6 @@
+			<figure class="album">
+				<div><a href="$album.key.html"><img src="$file_path" width="$exif_data.width" height="$exif_data.height" alt="$alt"></a></div>
+				<figcaption>
+					<p>&#9783; $album.name</p>
+				</figcaption>
+			</figure>

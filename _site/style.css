@@ -3,55 +3,11 @@
 	padding: 0;
 }
 
-@media screen and (prefers-color-scheme: dark) {
-	body {
-		background-image: linear-gradient(to right, #090909  0%, #000 25%, #000 50%, #090909 75%);
-		color: white;
-	}
-
-	header {
-		background-color: #090909;
-	}
-}
-
-@media screen and (prefers-color-scheme: light) {
-	body {
-		background-image: linear-gradient(to right, #f9f9f9  0%, #fff 25%, #fff 50%, #f9f9f9 75%);
-		color: black;
-	}
-
-	header {
-		background-color: #f9f9f9;
-	}
-}
-
-@media screen and (orientation: portrait) {
-	figure img {
-		max-width: min(90vw, 1000px);
-		max-height: min(90vw, 1000px, 90vh);
-	}
-
-	main {
-		grid-template-columns: 1fr;
-	}
-}
-
-@media screen and (orientation: landscape) {
-	figure img {
-		max-width: min(30vw, 1000px);
-		max-height: min(30vw, 1000px, 90vh);
-	}
-
-	main {
-		grid-template-columns: 1fr 1fr 1fr;
-	}
-}
-
 body {
 	font-family: sans-serif;
 	background-size: 7em 100%;
 	background-position: center;
-	margin-bottom: 2em;
+	padding-bottom: 2em;
 	padding: 1em;
 }
 
@@ -101,39 +57,79 @@ header > h1 {
 	margin: 0.2em;
 }
 
+header a:link, a:visited, a:hover, a:active {
+	color: inherit;
+	text-decoration: none;
+}
+
 main {
-	display: grid;
-	align-items: end;
-	justify-items: center;
-	gap: 0;
+	column-count: 3;
+	column-gap: 1em;
 }
 
 figure {
-	justify-self: center;
+	break-inside: avoid;
 	text-align: center;
+	margin-bottom: 3em;
+}
+
+figure div {
+	display: inline-block;
+	position: relative;
+}
+
+figcaption {
+	margin: 1em 2em;
+	text-align: left;
 }
 
 figure img {
-	border: 0.5em solid white;
-	box-shadow: 0.5em 0.5em 1em #333;
+	box-sizing: border-box;
 	width: auto;
 	height: auto;
+	vertical-align: middle;
+	border: 0.5em solid white;
+	box-shadow: 0.5em 0.5em 1em #333;
 }
 
-figure > figcaption {
-	margin-top: 1em;
-	height: 6em;
-	overflow: auto;
+.album figcaption {
+	margin: 2em;
+}
+
+.album a::before, .album a::after {
+	box-sizing: border-box;
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
+
+	border: 0.5em solid white;
+	box-shadow: 0.5em 0.5em 1em #333;
+	background: tan;
+	z-index: -1;
+}
+
+.album a::before {
+	transform: rotate(-2deg);
+}
+
+.album a::after {
+	transform: rotate(4deg);
 }
 
 figure > figcaption > p {
 	font-family: monospace;
 	font-size: 1.5em;
-	margin-left: 1em;
-	text-align: left;
 }
 
+
 @media print {
+	main {
+		column-count: 1;
+	}
 	figure img {
 		border: none;
 		box-shadow: none;
@@ -146,7 +142,51 @@ figure > figcaption > p {
 		grid-template-columns: 1fr;
 	}
 
-	header > p {
+	header > p, .album a::before, .album a::after {
 		display: none;
+	}
+}
+
+@media screen and (prefers-color-scheme: dark) {
+	body {
+		background-image: linear-gradient(to right, #090909  0%, #000 25%, #000 50%, #090909 75%);
+		color: white;
+	}
+
+	header {
+		background-color: #090909;
+	}
+}
+
+@media screen and (prefers-color-scheme: light) {
+	body {
+		background-image: linear-gradient(to right, #f9f9f9  0%, #fff 25%, #fff 50%, #f9f9f9 75%);
+		color: black;
+	}
+
+	header {
+		background-color: #f9f9f9;
+	}
+}
+
+@media screen and (orientation: portrait) {
+	figure img {
+		max-width: min(90vw, 1000px);
+		max-height: min(90vw, 1000px, 90vh);
+	}
+
+	main {
+		column-count: 1;
+	}
+}
+
+@media screen and (orientation: landscape) {
+	figure img {
+		max-width: min(30vw, 1000px);
+		max-height: min(30vw, 1000px, 90vh);
+	}
+
+	main {
+		column-count: 3;
 	}
 }
