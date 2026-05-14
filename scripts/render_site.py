@@ -76,31 +76,51 @@ def main():
     album_template = utils.read_file(ALBUM_TEMPLATE_FILE)
 
     rendered_photos = []
-    all_albums = defaultdict(list)
+    all_album_data = defaultdict(list)
 
     for photo_data in photo_data_list:
         albums = get_album_info(photo_data)
 
         if (albums):
             for album in albums:
-                if (not all_albums[album.key]):
+                if (not all_album_data[album.key]):
+                    album_data = {
+                        'name': album.name,
+                        'photo_data_list': []
+                    }
+
+                    all_album_data[album.key] = album_data
+
                     rendered_album = render_photo_template(album_template, photo_data | {'album': album.__dict__})
                     rendered_album = rendered_album.replace('$additional_gear', '')
                     rendered_photos.append(rendered_album)
 
-                all_albums[album.key].append(photo_data)
+                all_album_data[album.key].get('photo_data_list', []).append(photo_data)
         else:
             rendered_photo = render_photo_template(photo_template, photo_data)
             rendered_photo = rendered_photo.replace('$additional_gear', '')
             rendered_photos.append(rendered_photo)
 
     index = index_template.replace("$photos", "".join(rendered_photos))
+    index = index.replace("$header.left.content", "")
 
 #   print(index)
 
     utils.write_file(INDEX_FILE, index)
-
     print("Rendered site")
+
+    for album in all_album_data:
+        rendered_album_photos = []
+
+        for photo_data in all_album_data[album].get('photo_data_list', []):
+            rendered_photo = render_photo_template(photo_template, photo_data)
+            rendered_photo = rendered_photo.replace('$additional_gear', '')
+            rendered_album_photos.append(rendered_photo)
+
+        rendered_album = index_template.replace("$photos", "".join(rendered_album_photos))
+        rendered_album = rendered_album.replace("$header.left.content", '<a href="/" title="back">&#9204;</a>')
+        utils.write_file(os.path.join(WORKING_DIR, os.fsencode(f"_site/{album}.html")), rendered_album)
+        print(f"Rendered ablum {album}")
 
 
 
