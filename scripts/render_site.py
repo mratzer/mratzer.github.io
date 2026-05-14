@@ -2,14 +2,20 @@
 
 import os
 import utils
+from collections import defaultdict
 
 WORKING_DIR=os.path.abspath(os.fsencode('./'))
 YAML_FILE=os.path.join(WORKING_DIR, os.fsencode('photos.yaml'))
 TEMPLATE_DIR=os.path.join(WORKING_DIR, os.fsencode('templates/'))
 INDEX_TEMPLATE_FILE=os.path.join(TEMPLATE_DIR, os.fsencode('index.html.template'))
 PHOTO_TEMPLATE_FILE=os.path.join(TEMPLATE_DIR, os.fsencode('photo.html.template'))
+ALBUM_TEMPLATE_FILE=os.path.join(TEMPLATE_DIR, os.fsencode('album.html.template'))
 INDEX_FILE=os.path.join(WORKING_DIR, os.fsencode('_site/index.html'))
 
+class AlbumData:
+    def __init__(self, key, name):
+        self.key = key
+        self.name = name
 
 def render_photo_template(template, dictionary, prefix=''):
     rendered = template
@@ -28,7 +34,7 @@ def render_photo_template(template, dictionary, prefix=''):
         if isinstance(value, list):
             if actual_key == 'additional_gear':
                 rendered = rendered.replace(f"${actual_key}", "<br>" + " + ".join(value))
-            else:
+            elif actual_key != 'albums':
                 rendered = rendered.replace(f"${actual_key}", " + " + " + ".join(value))
         elif isinstance(value, dict):
             rendered = render_photo_template(rendered, value, actual_key)
@@ -40,6 +46,26 @@ def render_photo_template(template, dictionary, prefix=''):
     return rendered
 
 
+def get_album_info(photo_data):
+    if (not photo_data['albums']):
+        return None
+
+    album_info = []
+
+    for album_data in photo_data['albums']:
+        album_key = None
+        album_name = None
+        if isinstance(album_data, dict):
+            album_key = next(iter(album_data))
+            album_name = album_data[album_key].get('name', None)
+        else:
+            album_key = album_data
+            album_name = None
+
+        album_info.append(AlbumData(album_key, album_name))
+
+    return album_info
+
 
 def main():
     print("Rendering site ...")
@@ -47,13 +73,26 @@ def main():
     photo_data_list = utils.read_from_yaml(YAML_FILE)
     index_template = utils.read_file(INDEX_TEMPLATE_FILE)
     photo_template = utils.read_file(PHOTO_TEMPLATE_FILE)
+    album_template = utils.read_file(ALBUM_TEMPLATE_FILE)
 
     rendered_photos = []
+    all_albums = defaultdict(list)
 
     for photo_data in photo_data_list:
-        rendered_photo = render_photo_template(photo_template, photo_data)
-        rendered_photo = rendered_photo.replace('$additional_gear', '')
-        rendered_photos.append(rendered_photo)
+        albums = get_album_info(photo_data)
+
+        if (albums):
+            for album in albums:
+                if (not all_albums[album.key]):
+                    rendered_album = render_photo_template(album_template, photo_data | {'album': album.__dict__})
+                    rendered_album = rendered_album.replace('$additional_gear', '')
+                    rendered_photos.append(rendered_album)
+
+                all_albums[album.key].append(photo_data)
+        else:
+            rendered_photo = render_photo_template(photo_template, photo_data)
+            rendered_photo = rendered_photo.replace('$additional_gear', '')
+            rendered_photos.append(rendered_photo)
 
     index = index_template.replace("$photos", "".join(rendered_photos))
 
