@@ -118,7 +118,7 @@ def main():
             rendered_album_photos.append(rendered_photo)
 
         rendered_album = index_template.replace("$photos", "".join(rendered_album_photos))
-        rendered_album = rendered_album.replace("$header.left.content", '<a href="/" title="back">&#9204;</a>')
+        rendered_album = rendered_album.replace("$header.left.content", '<a href="/" title="back">&#9664;</a>')
         utils.write_file(os.path.join(WORKING_DIR, os.fsencode(f"_site/{album}.html")), rendered_album)
         print(f"Rendered ablum {album}")
 
