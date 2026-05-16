@@ -1,4 +1,152 @@
 photos:
+- file_path: assets/677d644111d2978069b8bb664b284b99e2c15277.jpg
+  alt: Peacock
+  additional_gear: []
+  albums:
+  - peacocks:
+      name: Peacocks
+  exif_data:
+    artist: marrat.eu
+    copyright: marrat.eu
+    aperture: f/7.1
+    exposure: 1/500s
+    iso: 500
+    focallength: 300.0 mm
+    colorspace: sRGB
+    camera_make: FUJIFILM
+    camera_model: X-T5
+    lens_make: FUJIFILM
+    lens_model: XF70-300mmF4-5.6 R LM OIS WR
+    lens_info: 70-300mm f/4-5.6
+    year_month: 2026-05
+    width: 666
+    height: 1000
+- file_path: assets/3b35d0977ec4b501aab7d25289f4c6208572b69a.jpg
+  alt: Peacock
+  additional_gear: []
+  albums:
+  - peacocks
+  exif_data:
+    artist: marrat.eu
+    copyright: marrat.eu
+    aperture: f/7.1
+    exposure: 1/250s
+    iso: 640
+    focallength: 289.0 mm
+    colorspace: sRGB
+    camera_make: FUJIFILM
+    camera_model: X-T5
+    lens_make: FUJIFILM
+    lens_model: XF70-300mmF4-5.6 R LM OIS WR
+    lens_info: 70-300mm f/4-5.6
+    year_month: 2026-05
+    width: 1000
+    height: 666
+- file_path: assets/505e77039901b56e75dc237a5cf6ccf26877af6d.jpg
+  alt: Peacock
+  additional_gear: []
+  albums:
+  - peacocks
+  exif_data:
+    artist: marrat.eu
+    copyright: marrat.eu
+    aperture: f/7.1
+    exposure: 1/250s
+    iso: 800
+    focallength: 300.0 mm
+    colorspace: sRGB
+    camera_make: FUJIFILM
+    camera_model: X-T5
+    lens_make: FUJIFILM
+    lens_model: XF70-300mmF4-5.6 R LM OIS WR
+    lens_info: 70-300mm f/4-5.6
+    year_month: 2026-05
+    width: 1000
+    height: 666
+- file_path: assets/055ffc56bdf4cae36e6303b5582348f8c375fbe8.jpg
+  alt: Peacock
+  additional_gear: []
+  albums:
+  - peacocks
+  exif_data:
+    artist: marrat.eu
+    copyright: marrat.eu
+    aperture: f/5.6
+    exposure: 1/500s
+    iso: 800
+    focallength: 122.5 mm
+    colorspace: sRGB
+    camera_make: FUJIFILM
+    camera_model: X-T5
+    lens_make: FUJIFILM
+    lens_model: XF70-300mmF4-5.6 R LM OIS WR
+    lens_info: 70-300mm f/4-5.6
+    year_month: 2026-05
+    width: 1000
+    height: 666
+- file_path: assets/058d27054eb8b55a87baaf347298b01ec452613f.jpg
+  alt: Peacock
+  additional_gear: []
+  albums:
+  - peacocks
+  exif_data:
+    artist: marrat.eu
+    copyright: marrat.eu
+    aperture: f/5.6
+    exposure: 1/500s
+    iso: 800
+    focallength: 300.0 mm
+    colorspace: sRGB
+    camera_make: FUJIFILM
+    camera_model: X-T5
+    lens_make: FUJIFILM
+    lens_model: XF70-300mmF4-5.6 R LM OIS WR
+    lens_info: 70-300mm f/4-5.6
+    year_month: 2026-05
+    width: 1000
+    height: 666
+- file_path: assets/1056825f6f22a42df07240b50ef52df3c3943b49.jpg
+  alt: Peacock
+  additional_gear: []
+  albums:
+  - peacocks
+  exif_data:
+    artist: marrat.eu
+    copyright: marrat.eu
+    aperture: f/5.6
+    exposure: 1/500s
+    iso: 800
+    focallength: 300.0 mm
+    colorspace: sRGB
+    camera_make: FUJIFILM
+    camera_model: X-T5
+    lens_make: FUJIFILM
+    lens_model: XF70-300mmF4-5.6 R LM OIS WR
+    lens_info: 70-300mm f/4-5.6
+    year_month: 2026-05
+    width: 1000
+    height: 666
+- file_path: assets/104d8513443998503dc7bf346f8c486db0ad68f4.jpg
+  alt: Peacock
+  additional_gear: []
+  albums:
+  - peacocks
+  exif_data:
+    artist: marrat.eu
+    copyright: marrat.eu
+    aperture: f/5.6
+    exposure: 1/500s
+    iso: 800
+    focallength: 231.0 mm
+    colorspace: sRGB
+    camera_make: FUJIFILM
+    camera_model: X-T5
+    lens_make: FUJIFILM
+    lens_model: XF70-300mmF4-5.6 R LM OIS WR
+    lens_info: 70-300mm f/4-5.6
+    year_month: 2026-05
+    width: 1000
+    height: 666
 - file_path: assets/c974791aeaa384403b3090347a38890a95628979.jpg
   alt: Frog with a fly on its nose
   additional_gear: []
