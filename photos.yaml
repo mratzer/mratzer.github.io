@@ -1,6 +1,239 @@
 photos:
+- file_path: assets/981671354122ac0d0a3e1b4fc7316acee73b2362.jpg
+  alt: Rose
+  additional_gear: []
+  albums:
+  - kittenberg:
+      name: "Kittenberger Erlebnisgärten"
+  exif_data:
+    artist: marrat.eu
+    copyright: marrat.eu
+    aperture: f/5.6
+    exposure: 1/500s
+    iso: 125
+    focallength: 56.0 mm
+    colorspace: sRGB
+    camera_make: FUJIFILM
+    camera_model: X-T5
+    lens_make: FUJIFILM
+    lens_model: XF56mmF1.2 R WR
+    lens_info: 56mm f/1.2
+    year_month: 2026-06
+    width: 1000
+    height: 1000
+- file_path: assets/c6a8c134e1ca3e37996b3248455923b0c494c4f3.jpg
+  alt: Model railway in motion
+  additional_gear: []
+  albums:
+  - kittenberg
+  exif_data:
+    artist: marrat.eu
+    copyright: marrat.eu
+    aperture: f/8.0
+    exposure: 1/125s
+    iso: 125
+    focallength: 56.0 mm
+    colorspace: sRGB
+    camera_make: FUJIFILM
+    camera_model: X-T5
+    lens_make: FUJIFILM
+    lens_model: XF56mmF1.2 R WR
+    lens_info: 56mm f/1.2
+    year_month: 2026-06
+    width: 1000
+    height: 666
+- file_path: assets/870916ca8eaeaf94fd1984ea56d534eb17975dc4.jpg
+  alt: Roses
+  additional_gear: []
+  albums:
+  - kittenberg
+  exif_data:
+    artist: marrat.eu
+    copyright: marrat.eu
+    aperture: f/2.0
+    exposure: 1/500s
+    iso: 125
+    focallength: 56.0 mm
+    colorspace: sRGB
+    camera_make: FUJIFILM
+    camera_model: X-T5
+    lens_make: FUJIFILM
+    lens_model: XF56mmF1.2 R WR
+    lens_info: 56mm f/1.2
+    year_month: 2026-06
+    width: 1000
+    height: 666
+- file_path: assets/96dd2f28287081d53f6a6ae041c6d60f03efcb18.jpg
+  alt: Car wreck used as flower bed
+  additional_gear: []
+  albums:
+  - kittenberg
+  exif_data:
+    artist: marrat.eu
+    copyright: marrat.eu
+    aperture: f/3.2
+    exposure: 1/125s
+    iso: 125
+    focallength: 56.0 mm
+    colorspace: sRGB
+    camera_make: FUJIFILM
+    camera_model: X-T5
+    lens_make: FUJIFILM
+    lens_model: XF56mmF1.2 R WR
+    lens_info: 56mm f/1.2
+    year_month: 2026-06
+    width: 1000
+    height: 666
+- file_path: assets/92ca609a8d5103935f3dba057724a5f12ea95a40.jpg
+  alt: Portrait of a black goat
+  additional_gear: []
+  albums:
+  - kittenberg
+  exif_data:
+    artist: marrat.eu
+    copyright: marrat.eu
+    aperture: f/2.0
+    exposure: 1/1000s
+    iso: 125
+    focallength: 56.0 mm
+    colorspace: sRGB
+    camera_make: FUJIFILM
+    camera_model: X-T5
+    lens_make: FUJIFILM
+    lens_model: XF56mmF1.2 R WR
+    lens_info: 56mm f/1.2
+    year_month: 2026-06
+    width: 1000
+    height: 666
+- file_path: assets/4044d9994ec45bb00382209a8579f8629b804d95.jpg
+  alt: Rose with a ladybug
+  additional_gear: []
+  albums:
+  - kittenberg
+  exif_data:
+    artist: marrat.eu
+    copyright: marrat.eu
+    aperture: f/4.0
+    exposure: 1/2000s
+    iso: 125
+    focallength: 56.0 mm
+    colorspace: sRGB
+    camera_make: FUJIFILM
+    camera_model: X-T5
+    lens_make: FUJIFILM
+    lens_model: XF56mmF1.2 R WR
+    lens_info: 56mm f/1.2
+    year_month: 2026-06
+    width: 1000
+    height: 666
+- file_path: assets/152ddb234de68cc4f27a499f3441e00a9b66fc27.jpg
+  alt: Red bycicle bell
+  additional_gear: []
+  albums:
+  - red:
+      name: "Photo Challenge: red"
+  exif_data:
+    artist: marrat.eu
+    copyright: marrat.eu
+    aperture: f/4.0
+    exposure: 1/30s
+    iso: 500
+    focallength: 22.3 mm
+    colorspace: sRGB
+    camera_make: FUJIFILM
+    camera_model: X-T5
+    lens_make: FUJIFILM
+    lens_model: XF18-55mmF2.8-4 R LM OIS
+    lens_info: 18-55mm f/2.8-4
+    year_month: 2026-05
+    width: 1000
+    height: 666
+- file_path: assets/0274dffe3f32a84ae8edcc9e54d56daf984cc2bd.jpg
+  alt: Red bycicle
+  additional_gear: []
+  albums:
+  - red
+  exif_data:
+    artist: marrat.eu
+    copyright: marrat.eu
+    aperture: f/4.0
+    exposure: 1/30s
+    iso: 500
+    focallength: 21.4 mm
+    colorspace: sRGB
+    camera_make: FUJIFILM
+    camera_model: X-T5
+    lens_make: FUJIFILM
+    lens_model: XF18-55mmF2.8-4 R LM OIS
+    lens_info: 18-55mm f/2.8-4
+    year_month: 2026-05
+    width: 666
+    height: 1000
+- file_path: assets/e6d48d4a8274bb0d0e05d601119e0f4b96b3ab85.jpg
+  alt: Red bycicle handles
+  additional_gear: []
+  albums:
+  - red
+  exif_data:
+    artist: marrat.eu
+    copyright: marrat.eu
+    aperture: f/4.0
+    exposure: 1/30s
+    iso: 500
+    focallength: 50.5 mm
+    colorspace: sRGB
+    camera_make: FUJIFILM
+    camera_model: X-T5
+    lens_make: FUJIFILM
+    lens_model: XF18-55mmF2.8-4 R LM OIS
+    lens_info: 18-55mm f/2.8-4
+    year_month: 2026-05
+    width: 1000
+    height: 666
+- file_path: assets/44639ac94d7a6743821f989db34fae307fca8df5.jpg
+  alt: Red lock on a wall
+  additional_gear: []
+  albums:
+  - red
+  exif_data:
+    artist: marrat.eu
+    copyright: marrat.eu
+    aperture: f/4.0
+    exposure: 1/30s
+    iso: 800
+    focallength: 44.4 mm
+    colorspace: sRGB
+    camera_make: FUJIFILM
+    camera_model: X-T5
+    lens_make: FUJIFILM
+    lens_model: XF18-55mmF2.8-4 R LM OIS
+    lens_info: 18-55mm f/2.8-4
+    year_month: 2026-05
+    width: 1000
+    height: 666
+- file_path: assets/62822b2c591fc229a49cfe3a386aa00eb75e6d1c.jpg
+  alt: Vienna crest on a license plate
+  additional_gear: []
+  albums:
+  - red
+  exif_data:
+    artist: marrat.eu
+    copyright: marrat.eu
+    aperture: f/5.0
+    exposure: 1/60s
+    iso: 320
+    focallength: 55.0 mm
+    colorspace: sRGB
+    camera_make: FUJIFILM
+    camera_model: X-T5
+    lens_make: FUJIFILM
+    lens_model: XF18-55mmF2.8-4 R LM OIS
+    lens_info: 18-55mm f/2.8-4
+    year_month: 2026-05
+    width: 1000
+    height: 666
 - file_path: assets/677d644111d2978069b8bb664b284b99e2c15277.jpg
-  alt: Peacock
+  alt: Peacock feathers
   additional_gear: []
   albums:
   - peacocks:
@@ -22,7 +255,7 @@ photos:
     width: 666
     height: 1000
 - file_path: assets/3b35d0977ec4b501aab7d25289f4c6208572b69a.jpg
-  alt: Peacock
+  alt: Grumpy looking peacock
   additional_gear: []
   albums:
   - peacocks
@@ -43,7 +276,7 @@ photos:
     width: 1000
     height: 666
 - file_path: assets/505e77039901b56e75dc237a5cf6ccf26877af6d.jpg
-  alt: Peacock
+  alt: Peacock portrait
   additional_gear: []
   albums:
   - peacocks
@@ -85,7 +318,7 @@ photos:
     width: 1000
     height: 666
 - file_path: assets/058d27054eb8b55a87baaf347298b01ec452613f.jpg
-  alt: Peacock
+  alt: Peacock feathers closeup
   additional_gear: []
   albums:
   - peacocks
@@ -145,6 +378,280 @@ photos:
     lens_model: XF70-300mmF4-5.6 R LM OIS WR
     lens_info: 70-300mm f/4-5.6
     year_month: 2026-05
+    width: 1000
+    height: 666
+- file_path: assets/85a109de1abc28d1a04fc54b2b8705d9e447e004.jpg
+  alt: Moon behind trees
+  additional_gear: []
+  albums:
+  - pannonia:
+      name: Pannonia
+  exif_data:
+    artist: marrat.eu
+    copyright: marrat.eu
+    aperture: f/5.0
+    exposure: 1s
+    iso: 1600
+    focallength: 171.3 mm
+    colorspace: sRGB
+    camera_make: FUJIFILM
+    camera_model: X-T5
+    lens_make: FUJIFILM
+    lens_model: XF70-300mmF4-5.6 R LM OIS WR
+    lens_info: 70-300mm f/4-5.6
+    year_month: 2026-05
+    width: 1000
+    height: 666
+- file_path: assets/ec2c8cca23155cd575c29942c47be7237368bd48.jpg
+  alt: Light bulbs
+  additional_gear: []
+  albums:
+  - pannonia
+  exif_data:
+    artist: marrat.eu
+    copyright: marrat.eu
+    aperture: f/8.0
+    exposure: 1/60s
+    iso: 1000
+    focallength: 222.5 mm
+    colorspace: sRGB
+    camera_make: FUJIFILM
+    camera_model: X-T5
+    lens_make: FUJIFILM
+    lens_model: XF70-300mmF4-5.6 R LM OIS WR
+    lens_info: 70-300mm f/4-5.6
+    year_month: 2026-05
+    width: 1000
+    height: 666
+- file_path: assets/c7e6fca444f98a196caf29aa7a8f277d0fc0e3ed.jpg
+  alt: Sunset over a lake
+  additional_gear: []
+  albums:
+  - pannonia
+  exif_data:
+    artist: marrat.eu
+    copyright: marrat.eu
+    aperture: f/10.0
+    exposure: 1/125s
+    iso: 125
+    focallength: 70.0 mm
+    colorspace: sRGB
+    camera_make: FUJIFILM
+    camera_model: X-T5
+    lens_make: FUJIFILM
+    lens_model: XF70-300mmF4-5.6 R LM OIS WR
+    lens_info: 70-300mm f/4-5.6
+    year_month: 2026-05
+    width: 666
+    height: 1000
+- file_path: assets/279c2b892a60216234d78c2519c0fc62905ecdec.jpg
+  alt: Cricket
+  additional_gear: []
+  albums:
+  - pannonia
+  exif_data:
+    artist: marrat.eu
+    copyright: marrat.eu
+    aperture: f/10.0
+    exposure: 1/1000s
+    iso: 250
+    focallength: 300.0 mm
+    colorspace: sRGB
+    camera_make: FUJIFILM
+    camera_model: X-T5
+    lens_make: FUJIFILM
+    lens_model: XF70-300mmF4-5.6 R LM OIS WR
+    lens_info: 70-300mm f/4-5.6
+    year_month: 2026-05
+    width: 1000
+    height: 666
+- file_path: assets/4076f626cad0e1b61bc09a87d794b49c102190b5.jpg
+  alt: Frog
+  additional_gear: []
+  albums:
+  - pannonia
+  exif_data:
+    artist: marrat.eu
+    copyright: marrat.eu
+    aperture: f/10.0
+    exposure: 1/500s
+    iso: 500
+    focallength: 300.0 mm
+    colorspace: sRGB
+    camera_make: FUJIFILM
+    camera_model: X-T5
+    lens_make: FUJIFILM
+    lens_model: XF70-300mmF4-5.6 R LM OIS WR
+    lens_info: 70-300mm f/4-5.6
+    year_month: 2026-05
+    width: 1000
+    height: 666
+- file_path: assets/32da02d33581394db930557e134fdeca068c9b0d.jpg
+  alt: Shadow of a frog on a leaf
+  additional_gear: []
+  albums:
+  - pannonia
+  exif_data:
+    artist: marrat.eu
+    copyright: marrat.eu
+    aperture: f/8.0
+    exposure: 1/250s
+    iso: 500
+    focallength: 300.0 mm
+    colorspace: sRGB
+    camera_make: FUJIFILM
+    camera_model: X-T5
+    lens_make: FUJIFILM
+    lens_model: XF70-300mmF4-5.6 R LM OIS WR
+    lens_info: 70-300mm f/4-5.6
+    year_month: 2026-05
+    width: 1000
+    height: 666
+- file_path: assets/d4bab48bb0a74e815bdf581de9cbcd8cc2b814e3.jpg
+  alt: Flying bird
+  additional_gear: []
+  albums:
+  - pannonia
+  exif_data:
+    artist: marrat.eu
+    copyright: marrat.eu
+    aperture: f/9.0
+    exposure: 1/1000s
+    iso: 500
+    focallength: 300.0 mm
+    colorspace: sRGB
+    camera_make: FUJIFILM
+    camera_model: X-T5
+    lens_make: FUJIFILM
+    lens_model: XF70-300mmF4-5.6 R LM OIS WR
+    lens_info: 70-300mm f/4-5.6
+    year_month: 2026-05
+    width: 1000
+    height: 666
+- file_path: assets/70a6a100295548eb4295f7d375100c9cbca19451.jpg
+  alt: Frog
+  additional_gear: []
+  albums:
+  - pannonia
+  exif_data:
+    artist: marrat.eu
+    copyright: marrat.eu
+    aperture: f/9.0
+    exposure: 1/500s
+    iso: 200
+    focallength: 300.0 mm
+    colorspace: sRGB
+    camera_make: FUJIFILM
+    camera_model: X-T5
+    lens_make: FUJIFILM
+    lens_model: XF70-300mmF4-5.6 R LM OIS WR
+    lens_info: 70-300mm f/4-5.6
+    year_month: 2026-05
+    width: 666
+    height: 1000
+- file_path: assets/81e58d784fc0af547ad8b4a2ed654c0ae33230ba.jpg
+  alt: Flower chafer
+  additional_gear: []
+  albums:
+  - pannonia
+  exif_data:
+    artist: marrat.eu
+    copyright: marrat.eu
+    aperture: f/5.6
+    exposure: 1/500s
+    iso: 1250
+    focallength: 300.0 mm
+    colorspace: sRGB
+    camera_make: FUJIFILM
+    camera_model: X-T5
+    lens_make: FUJIFILM
+    lens_model: XF70-300mmF4-5.6 R LM OIS WR
+    lens_info: 70-300mm f/4-5.6
+    year_month: 2026-05
+    width: 1000
+    height: 666
+- file_path: assets/9d0b6033af515b94ce923bf7bb058a6df0185dc2.jpg
+  alt: Frog
+  additional_gear: []
+  albums:
+  - pannonia
+  exif_data:
+    artist: marrat.eu
+    copyright: marrat.eu
+    aperture: f/5.6
+    exposure: 1/1000s
+    iso: 500
+    focallength: 300.0 mm
+    colorspace: sRGB
+    camera_make: FUJIFILM
+    camera_model: X-T5
+    lens_make: FUJIFILM
+    lens_model: XF70-300mmF4-5.6 R LM OIS WR
+    lens_info: 70-300mm f/4-5.6
+    year_month: 2026-05
+    width: 666
+    height: 1000
+- file_path: assets/5dda3fd61a8a2b7b118e4fcb909aada84d99a774.jpg
+  alt: Insect on a flower
+  additional_gear: []
+  albums:
+  - pannonia
+  exif_data:
+    artist: marrat.eu
+    copyright: marrat.eu
+    aperture: f/8.0
+    exposure: 1/1000s
+    iso: 500
+    focallength: 239.8 mm
+    colorspace: sRGB
+    camera_make: FUJIFILM
+    camera_model: X-T5
+    lens_make: FUJIFILM
+    lens_model: XF70-300mmF4-5.6 R LM OIS WR
+    lens_info: 70-300mm f/4-5.6
+    year_month: 2026-05
+    width: 1000
+    height: 666
+- file_path: assets/bb3859b19cfa1a68024e1c4c677bcd82e44ec96b.jpg
+  alt: Spider nest
+  additional_gear: []
+  albums:
+  - pannonia
+  exif_data:
+    artist: marrat.eu
+    copyright: marrat.eu
+    aperture: f/6.4
+    exposure: 1/500s
+    iso: 400
+    focallength: 300.0 mm
+    colorspace: sRGB
+    camera_make: FUJIFILM
+    camera_model: X-T5
+    lens_make: FUJIFILM
+    lens_model: XF70-300mmF4-5.6 R LM OIS WR
+    lens_info: 70-300mm f/4-5.6
+    year_month: 2026-05
+    width: 1000
+    height: 666
+- file_path: assets/2e2124858be9410b5ef6ebd5b08b6a424a42d8b7.jpg
+  alt: Moon framed by bushes
+  additional_gear: []
+  albums:
+  - pannonia
+  exif_data:
+    artist: marrat.eu
+    copyright: marrat.eu
+    aperture: f/8.0
+    exposure: 1/125s
+    iso: 800
+    focallength: 55.0 mm
+    colorspace: sRGB
+    camera_make: FUJIFILM
+    camera_model: X-T5
+    lens_make: FUJIFILM
+    lens_model: XF18-55mmF2.8-4 R LM OIS
+    lens_info: 18-55mm f/2.8-4
+    year_month: 2026-04
     width: 1000
     height: 666
 - file_path: assets/c974791aeaa384403b3090347a38890a95628979.jpg
