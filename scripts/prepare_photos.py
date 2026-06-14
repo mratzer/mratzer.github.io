@@ -3,7 +3,6 @@
 import datetime
 import hashlib
 import os
-import re
 import subprocess
 import shutil
 import sys
@@ -101,29 +100,65 @@ def prepare_photos(directory_name):
     old_photo_data_list = utils.read_from_yaml(YAML_FILE)
 
     for input_file in os.listdir(directory):
-        input_filename = os.fsdecode(input_file)
+        potential_sub_directory = utils.to_absolute_path(directory, input_file)
 
-        if input_filename.startswith(PHOTO_PREFIX) and input_filename.endswith(PHOTO_SUFFIX):
-            input_file = os.path.join(directory, input_file)
-
-            new_photo_data = prepare_photo(input_file)
-            old_photo_data = get_old_photo_data(old_photo_data_list, new_photo_data.output_file)
-
-            if old_photo_data:
-                new_photo_data.alt = old_photo_data['alt']
-                new_photo_data.additional_gear = old_photo_data.get('additional_gear', [])
-                new_photo_data.albums = old_photo_data.get('albums', [])
-
-                if not new_photo_data.exif_data.lens_make and old_photo_data['exif_data'].get('lens_make', None):
-                    new_photo_data.exif_data.lens_make = old_photo_data['exif_data']['lens_make']
-                if not new_photo_data.exif_data.lens_info and old_photo_data['exif_data'].get('lens_info', None):
-                    new_photo_data.exif_data.lens_info = old_photo_data['exif_data']['lens_info']
-
-            new_photo_data_list.append(new_photo_data)
+        if os.path.isdir(potential_sub_directory):
+            album_key = os.fsdecode(input_file)
+            prepare_photos_in_directory(potential_sub_directory, album_key, old_photo_data_list, new_photo_data_list)
+        else:
+          prepare_photo(directory, input_file, None, old_photo_data_list, new_photo_data_list)
 
     new_photo_data_list.sort(key = lambda pd: pd.exif_data.timestamp, reverse = True)
 
     return new_photo_data_list
+
+
+def prepare_photos_in_directory(directory, album_key, old_photo_data_list, new_photo_data_list):
+    print(f"\tPreparing album {album_key}")
+
+    for input_file in os.listdir(directory):
+        prepare_photo(directory, input_file, album_key, old_photo_data_list, new_photo_data_list)
+
+
+def prepare_photo(directory, file, album_key, old_photo_data_list, new_photo_data_list):
+    filename = os.fsdecode(file)
+
+    if filename.startswith(PHOTO_PREFIX) and filename.endswith(PHOTO_SUFFIX):
+        image_file = os.path.join(directory, file)
+
+        new_photo_data = prepare_photo_file(image_file)
+        old_photo_data = get_old_photo_data(old_photo_data_list, new_photo_data.output_file)
+
+        if old_photo_data:
+            new_photo_data.alt = old_photo_data['alt']
+            new_photo_data.additional_gear = old_photo_data.get('additional_gear', [])
+            new_photo_data.albums = old_photo_data.get('albums', [])
+
+            if (album_key):
+                handle_album(new_photo_data.albums, album_key)
+
+            if not new_photo_data.exif_data.lens_make and old_photo_data['exif_data'].get('lens_make', None):
+                new_photo_data.exif_data.lens_make = old_photo_data['exif_data']['lens_make']
+            if not new_photo_data.exif_data.lens_info and old_photo_data['exif_data'].get('lens_info', None):
+                new_photo_data.exif_data.lens_info = old_photo_data['exif_data']['lens_info']
+
+        new_photo_data_list.append(new_photo_data)
+
+
+def handle_album(album_data_list, new_album_key):
+    existing_album_keys = []
+
+    for album_data in album_data_list:
+        if isinstance(album_data, dict):
+            existing_album_keys.append(next(iter(album_data)))
+        else:
+            existing_album_keys.append(album_data)
+
+    if (new_album_key not in existing_album_keys):
+        album_data.append(new_album_key)
+
+    # TODO: remove album when file has been removed from corresponding directory
+    # TODO: check if multiple albums work
 
 
 def get_old_photo_data(old_photo_data_list, output_file):
@@ -136,7 +171,7 @@ def get_old_photo_data(old_photo_data_list, output_file):
     return None
 
 
-def prepare_photo(input_file):
+def prepare_photo_file(input_file):
     input_filename = os.fsdecode(input_file)
 
     tmp_file_path = utils.to_absolute_path(WORKING_DIR, f"tmp{PHOTO_SUFFIX}")
@@ -191,8 +226,8 @@ def write_to_yaml(photo_data_list, target):
     if (os.path.isfile(target)):
         shutil.copyfile(target, os.fsdecode(target) + ".bak")
 
-    with open(target, 'w') as yaml_file:
-        yaml.dump(yaml_data, yaml_file, default_flow_style=False, sort_keys=False)
+    with open(target, mode='w', encoding='utf-8') as yaml_file:
+        yaml.dump(yaml_data, yaml_file, default_flow_style=False, sort_keys=False, encoding='utf-8', allow_unicode=True)
 
 
 

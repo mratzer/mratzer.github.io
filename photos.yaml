@@ -4,7 +4,7 @@ photos:
   additional_gear: []
   albums:
   - kittenberg:
-      name: "Kittenberger Erlebnisgärten"
+      name: Kittenberger Erlebnisgärten
   exif_data:
     artist: marrat.eu
     copyright: marrat.eu
@@ -131,7 +131,7 @@ photos:
   additional_gear: []
   albums:
   - red:
-      name: "Photo Challenge: red"
+      name: 'Photo Challenge: red'
   exif_data:
     artist: marrat.eu
     copyright: marrat.eu
