@@ -57,7 +57,9 @@ def get_album_info(photo_data):
         album_name = None
         if isinstance(album_data, dict):
             album_key = next(iter(album_data))
-            album_name = album_data[album_key].get('name', None)
+            album_metadata = album_data[album_key]
+            if (album_metadata):
+                album_name = album_metadata.get('name', None)
         else:
             album_key = album_data
             album_name = None

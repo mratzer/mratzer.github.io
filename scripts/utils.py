@@ -5,21 +5,22 @@ import yaml
 
 def read_from_yaml(source):
     try:
-        with open(source, 'r') as yaml_file:
+        with open(source, mode='r', encoding='utf-8') as yaml_file:
             yaml_data = yaml.safe_load(yaml_file)
 
             return yaml_data['photos']
-    except:
+    except Exception as e:
+        print(e)
         return []
 
 def read_file(source):
-    with open(source, 'r') as file:
+    with open(source, mode='r', encoding='utf-8') as file:
         content = file.read()
         file.close()
         return content
 
 def write_file(target, content):
-    with open(target, 'w') as file:
+    with open(target, mode='w', encoding='utf-8') as file:
         file.write(content)
         file.close()
 
