@@ -63,14 +63,15 @@ header a:link, a:visited, a:hover, a:active {
 }
 
 main {
-	column-count: 3;
-	column-gap: 1em;
+	display: grid;
+	width: fit-content;
+	gap: 3em;
+	margin: 0 auto;
 }
 
 figure {
 	break-inside: avoid;
 	text-align: center;
-	margin-bottom: 3em;
 }
 
 figure div {
@@ -79,7 +80,7 @@ figure div {
 }
 
 figcaption {
-	margin: 1em 2em;
+	margin: 1em 0 0 1em;
 	text-align: left;
 }
 
@@ -93,7 +94,8 @@ figure img {
 }
 
 .album figcaption {
-	margin: 2em;
+	margin-top: 2em;
+	text-align: center;
 }
 
 .album a::before, .album a::after {
@@ -128,7 +130,7 @@ figure > figcaption > p {
 
 @media print {
 	main {
-		column-count: 1;
+		grid-template-columns: 1fr;
 	}
 	figure img {
 		border: none;
@@ -174,19 +176,22 @@ figure > figcaption > p {
 		max-width: min(90vw, 1000px);
 		max-height: min(90vw, 1000px, 90vh);
 	}
+	.album figcaption {
+		margin-bottom: 1em;
+	}
 
 	main {
-		column-count: 1;
+		grid-template-columns: 1fr;
 	}
 }
 
 @media screen and (orientation: landscape) {
 	figure img {
-		max-width: min(30vw, 1000px);
-		max-height: min(30vw, 1000px, 90vh);
+		max-width: min(25vw, 1000px);
+		max-height: min(25vw, 1000px, 90vh);
 	}
 
 	main {
-		column-count: 3;
+		grid-template-columns: min(25vw, 1000px) min(25vw, 1000px) min(25vw, 1000px);
 	}
 }
