@@ -8,7 +8,7 @@ def read_from_yaml(source):
         with open(source, mode='r', encoding='utf-8') as yaml_file:
             yaml_data = yaml.safe_load(yaml_file)
 
-            return yaml_data['photos']
+            return yaml_data
     except Exception as e:
         print(e)
         return []

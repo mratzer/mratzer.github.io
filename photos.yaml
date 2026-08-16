@@ -1,10 +1,28 @@
+albums:
+- key: kittenberg
+  name: Kittenberger Erlebnisgärten
+  order: asc
+- key: red
+  name: 'Photo Challenge: red'
+  order: asc
+- key: peacocks
+  name: Peacocks
+  order: asc
+- key: pannonia
+  name: Pannonia
+  order: asc
+- key: seewinkel
+  name: Seewinkel
+  order: asc
+- key: prater
+  name: Prater
+  order: asc
 photos:
 - file_path: assets/981671354122ac0d0a3e1b4fc7316acee73b2362.jpg
   alt: Rose
   additional_gear: []
   albums:
-  - kittenberg:
-      name: Kittenberger Erlebnisgärten
+  - kittenberg
   exif_data:
     artist: marrat.eu
     copyright: marrat.eu
@@ -130,8 +148,7 @@ photos:
   alt: Red bycicle bell
   additional_gear: []
   albums:
-  - red:
-      name: 'Photo Challenge: red'
+  - red
   exif_data:
     artist: marrat.eu
     copyright: marrat.eu
@@ -236,8 +253,7 @@ photos:
   alt: Peacock feathers
   additional_gear: []
   albums:
-  - peacocks:
-      name: Peacocks
+  - peacocks
   exif_data:
     artist: marrat.eu
     copyright: marrat.eu
@@ -384,8 +400,7 @@ photos:
   alt: Moon behind trees
   additional_gear: []
   albums:
-  - pannonia:
-      name: Pannonia
+  - pannonia
   exif_data:
     artist: marrat.eu
     copyright: marrat.eu
@@ -658,8 +673,7 @@ photos:
   alt: Frog with a fly on its nose
   additional_gear: []
   albums:
-  - seewinkel:
-      name: Seewinkel
+  - seewinkel
   exif_data:
     artist: marrat.eu
     copyright: marrat.eu
@@ -722,8 +736,7 @@ photos:
   alt: Caroussel
   additional_gear: []
   albums:
-  - prater:
-      name: Prater
+  - prater
   exif_data:
     artist: marrat.eu
     copyright: marrat.eu

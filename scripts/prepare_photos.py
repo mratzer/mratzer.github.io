@@ -93,20 +93,20 @@ class PhotoData:
         self.albums = []
 
 
-def prepare_photos(directory_name):
+def prepare_photos(old_photo_data_list, directory_name):
     directory = os.path.abspath(os.fsencode(directory_name))
 
     new_photo_data_list = []
-    old_photo_data_list = utils.read_from_yaml(YAML_FILE)
 
     for input_file in os.listdir(directory):
         potential_sub_directory = utils.to_absolute_path(directory, input_file)
 
         if os.path.isdir(potential_sub_directory):
             album_key = os.fsdecode(input_file)
-            prepare_photos_in_directory(potential_sub_directory, album_key, old_photo_data_list, new_photo_data_list)
+            if not album_key.startswith('.'):
+                prepare_photos_in_directory(potential_sub_directory, album_key, old_photo_data_list, new_photo_data_list)
         else:
-          prepare_photo(directory, input_file, None, old_photo_data_list, new_photo_data_list)
+          prepare_photo_in_directory(directory, input_file, None, old_photo_data_list, new_photo_data_list)
 
     new_photo_data_list.sort(key = lambda pd: pd.exif_data.timestamp, reverse = True)
 
@@ -117,10 +117,10 @@ def prepare_photos_in_directory(directory, album_key, old_photo_data_list, new_p
     print(f"\tPreparing album {album_key}")
 
     for input_file in os.listdir(directory):
-        prepare_photo(directory, input_file, album_key, old_photo_data_list, new_photo_data_list)
+        prepare_photo_in_directory(directory, input_file, album_key, old_photo_data_list, new_photo_data_list)
 
 
-def prepare_photo(directory, file, album_key, old_photo_data_list, new_photo_data_list):
+def prepare_photo_in_directory(directory, file, album_key, old_photo_data_list, new_photo_data_list):
     filename = os.fsdecode(file)
 
     if filename.startswith(PHOTO_PREFIX) and filename.endswith(PHOTO_SUFFIX):
@@ -134,13 +134,13 @@ def prepare_photo(directory, file, album_key, old_photo_data_list, new_photo_dat
             new_photo_data.additional_gear = old_photo_data.get('additional_gear', [])
             new_photo_data.albums = old_photo_data.get('albums', [])
 
-            if (album_key):
-                handle_album(new_photo_data.albums, album_key)
-
             if not new_photo_data.exif_data.lens_make and old_photo_data['exif_data'].get('lens_make', None):
                 new_photo_data.exif_data.lens_make = old_photo_data['exif_data']['lens_make']
             if not new_photo_data.exif_data.lens_info and old_photo_data['exif_data'].get('lens_info', None):
                 new_photo_data.exif_data.lens_info = old_photo_data['exif_data']['lens_info']
+
+        if album_key:
+            handle_album(new_photo_data.albums, album_key)
 
         new_photo_data_list.append(new_photo_data)
 
@@ -155,7 +155,7 @@ def handle_album(album_data_list, new_album_key):
             existing_album_keys.append(album_data)
 
     if (new_album_key not in existing_album_keys):
-        album_data.append(new_album_key)
+        album_data_list.append(new_album_key)
 
     # TODO: remove album when file has been removed from corresponding directory
     # TODO: check if multiple albums work
@@ -204,12 +204,21 @@ def sha1sum(file_path):
         return hashlib.sha1(file.read()).hexdigest()
 
 
-def write_to_yaml(photo_data_list, target):
+def write_to_yaml(new_album_list, new_photo_list, target):
     yaml_data = {
+        'albums': [],
         'photos': []
     }
 
-    for photo_data in photo_data_list:
+    for album_data in new_album_list:
+        yaml_data['albums'].append({
+            'key': album_data['key'],
+            'name': album_data['name'],
+            'order': album_data['order'],
+            'cover': album_data['cover']
+        })
+
+    for photo_data in new_photo_list:
         exif_data = photo_data.exif_data.__dict__
         filtered_exif_data = { k: v for k, v in exif_data.items() if v and k not in SENSITIVE_EXIF_ATTRIBUTES }
 
@@ -221,7 +230,9 @@ def write_to_yaml(photo_data_list, target):
             'exif_data': filtered_exif_data
         })
 
-#   print(yaml_data)
+#    print(yaml_data)
+#    print(yaml_data['albums'])
+#    print(yaml_data['photos'])
 
     if (os.path.isfile(target)):
         shutil.copyfile(target, os.fsdecode(target) + ".bak")
@@ -230,13 +241,49 @@ def write_to_yaml(photo_data_list, target):
         yaml.dump(yaml_data, yaml_file, default_flow_style=False, sort_keys=False, encoding='utf-8', allow_unicode=True)
 
 
+def prepare_albums(old_album_data, new_photo_list):
+    known_albums = dict()
+
+    for album_data in old_album_data:
+        known_albums[album_data['key']] = {
+            'key': album_data['key'],
+            'name': album_data['name'],
+            'order': album_data['order'],
+            'cover': album_data.get('cover', None),
+            'needsCover': 'cover' not in album_data
+        }
+
+    for photo_data in new_photo_list:
+        for album_key in photo_data.albums:
+            if album_key not in known_albums:
+                new_album = {
+                    album_key: {
+                        'key': album_key,
+                        'name': input(f"Enter title for new album {album_key}: "),
+                        'order': input(f"Enter sort oder ('asc' or 'desc') for new album {album_key}, default 'asc': ").strip() or 'asc',
+                        'cover': None,
+                        'needsCover': True
+                    }
+                }
+
+                new_album.update(known_albums)
+
+                known_albums = new_album
+
+            known_album = known_albums[album_key]
+
+            if known_album['needsCover'] and (not known_album['cover'] or known_album['order'] == 'asc'):
+                    known_album['cover'] = utils.to_relative_path(DEPLOYMENT_DIR, photo_data.output_file)
+
+    return known_albums.values()
+
 
 def main():
     # print(WORKING_DIR)
     # print(ASSET_DIR)
     # print(YAML_FILE)
 
-    print("Preparing photos ...")
+    print("Preparing albums and photos ...")
 
     try:
         directory_name=sys.argv[1]
@@ -244,15 +291,18 @@ def main():
         print('Please pass a directory as 1st parameter')
         sys.exit()
 
-    photo_data_list = prepare_photos(directory_name)
+    data = utils.read_from_yaml(YAML_FILE)
 
-    for photo_data in photo_data_list:
+    new_photo_list = prepare_photos(data['photos'], directory_name)
+    new_album_list = prepare_albums(data['albums'], new_photo_list)
+
+    for photo_data in new_photo_list:
         if not photo_data.alt:
             photo_data.alt = input(f"Enter ALT text for {photo_data.input_file}: ")
 
-    write_to_yaml(photo_data_list, YAML_FILE)
+    write_to_yaml(new_album_list, new_photo_list, YAML_FILE)
 
-    print("Prepared photos")
+    print("Prepared albums and photos")
 
 
 

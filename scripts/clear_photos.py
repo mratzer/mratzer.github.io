@@ -47,7 +47,7 @@ def get_used_file_paths(directory, photo_data_list):
 
 def main():
     print("Clearing photos ...")
-    used_file_paths = get_used_file_paths(DEPLOYMENT_DIR, utils.read_from_yaml(YAML_FILE))
+    used_file_paths = get_used_file_paths(DEPLOYMENT_DIR, utils.read_from_yaml(YAML_FILE)['photos'])
     count = clear_photos(ASSET_DIR, used_file_paths)
 
     print(f"Cleared {count} photos")
