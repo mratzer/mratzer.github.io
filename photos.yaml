@@ -1,23 +1,138 @@
 albums:
+- key: partial_solar_eclipse
+  name: Partial Solar Eclipse
+  order: asc
+  cover: assets/8acaee2368a6c3dcd55c324a9610f892b30bff06.jpg
 - key: kittenberg
   name: Kittenberger Erlebnisgärten
-  order: asc
+  order: desc
+  cover: assets/981671354122ac0d0a3e1b4fc7316acee73b2362.jpg
 - key: red
   name: 'Photo Challenge: red'
-  order: asc
+  order: desc
+  cover: assets/152ddb234de68cc4f27a499f3441e00a9b66fc27.jpg
 - key: peacocks
   name: Peacocks
-  order: asc
+  order: desc
+  cover: assets/677d644111d2978069b8bb664b284b99e2c15277.jpg
 - key: pannonia
   name: Pannonia
-  order: asc
+  order: desc
+  cover: assets/c7e6fca444f98a196caf29aa7a8f277d0fc0e3ed.jpg
 - key: seewinkel
   name: Seewinkel
   order: asc
+  cover: assets/4b1b6decb7ef804c324e4cb329264bb5f355c83d.jpg
 - key: prater
   name: Prater
-  order: asc
+  order: desc
+  cover: assets/2c0fec266356dbbac9ff53a70d746d5595f0ab1f.jpg
 photos:
+- file_path: assets/aeeeafea81c54ccf615b0be2072670a8d02ca8f0.jpg
+  alt: Sunset after partial solar eclipse
+  additional_gear: []
+  albums:
+  - partial_solar_eclipse
+  exif_data:
+    artist: marrat.eu
+    copyright: marrat.eu
+    aperture: f/20.0
+    exposure: 1/250s
+    iso: 125
+    focallength: 300.0 mm
+    colorspace: sRGB
+    camera_make: FUJIFILM
+    camera_model: X-T5
+    lens_make: FUJIFILM
+    lens_model: XF70-300mmF4-5.6 R LM OIS WR
+    lens_info: 70-300mm f/4-5.6
+    year_month: 2026-08
+    width: 1000
+    height: 666
+- file_path: assets/c38b15197a1a24c666946d3b9656723362d5c243.jpg
+  alt: Partial Solar Eclipse
+  additional_gear: []
+  albums:
+  - partial_solar_eclipse
+  exif_data:
+    artist: marrat.eu
+    copyright: marrat.eu
+    aperture: f/20.0
+    exposure: 1/250s
+    iso: 125
+    focallength: 300.0 mm
+    colorspace: sRGB
+    camera_make: FUJIFILM
+    camera_model: X-T5
+    lens_make: FUJIFILM
+    lens_model: XF70-300mmF4-5.6 R LM OIS WR
+    lens_info: 70-300mm f/4-5.6
+    year_month: 2026-08
+    width: 1000
+    height: 666
+- file_path: assets/43108872ed74db1d6945e65f3c8eda49f7191877.jpg
+  alt: Partial Solar Eclipse
+  additional_gear: []
+  albums:
+  - partial_solar_eclipse
+  exif_data:
+    artist: marrat.eu
+    copyright: marrat.eu
+    aperture: f/22.0
+    exposure: 1/500s
+    iso: 125
+    focallength: 300.0 mm
+    colorspace: sRGB
+    camera_make: FUJIFILM
+    camera_model: X-T5
+    lens_make: FUJIFILM
+    lens_model: XF70-300mmF4-5.6 R LM OIS WR
+    lens_info: 70-300mm f/4-5.6
+    year_month: 2026-08
+    width: 1000
+    height: 666
+- file_path: assets/9424debfd9a6f72c6507e3059ed7d30914f420ae.jpg
+  alt: Partial Solar Eclipse
+  additional_gear: []
+  albums:
+  - partial_solar_eclipse
+  exif_data:
+    artist: marrat.eu
+    copyright: marrat.eu
+    aperture: f/22.0
+    exposure: 1/1000s
+    iso: 125
+    focallength: 222.5 mm
+    colorspace: sRGB
+    camera_make: FUJIFILM
+    camera_model: X-T5
+    lens_make: FUJIFILM
+    lens_model: XF70-300mmF4-5.6 R LM OIS WR
+    lens_info: 70-300mm f/4-5.6
+    year_month: 2026-08
+    width: 1000
+    height: 666
+- file_path: assets/8acaee2368a6c3dcd55c324a9610f892b30bff06.jpg
+  alt: Partial Solar Eclipse
+  additional_gear: []
+  albums:
+  - partial_solar_eclipse
+  exif_data:
+    artist: marrat.eu
+    copyright: marrat.eu
+    aperture: f/22.0
+    exposure: 1/1000s
+    iso: 125
+    focallength: 70.0 mm
+    colorspace: sRGB
+    camera_make: FUJIFILM
+    camera_model: X-T5
+    lens_make: FUJIFILM
+    lens_model: XF70-300mmF4-5.6 R LM OIS WR
+    lens_info: 70-300mm f/4-5.6
+    year_month: 2026-08
+    width: 1000
+    height: 666
 - file_path: assets/981671354122ac0d0a3e1b4fc7316acee73b2362.jpg
   alt: Rose
   additional_gear: []
